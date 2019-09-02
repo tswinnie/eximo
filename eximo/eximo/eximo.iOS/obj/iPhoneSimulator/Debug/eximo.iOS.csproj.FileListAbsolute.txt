@@ -45,10 +45,16 @@ C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.iOS\b
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.iOS\bin\iPhoneSimulator\Debug\zh-Hant\Xamarin.Forms.Platform.iOS.resources.dll
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.iOS\bin\iPhoneSimulator\Debug\eximo.dll
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.iOS\bin\iPhoneSimulator\Debug\eximo.pdb
-C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.iOS\obj\iPhoneSimulator\Debug\Contents.json.ResolveUTIs.stamp
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.iOS\obj\iPhoneSimulator\Debug\eximo-ios7-splashscreen-640X1136.png.ResolveUTIs.stamp
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.iOS\obj\iPhoneSimulator\Debug\eximo-splashscreen-1125x2436.png.ResolveUTIs.stamp
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.iOS\obj\iPhoneSimulator\Debug\eximo-splashscreen-1242x2208.png.ResolveUTIs.stamp
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.iOS\obj\iPhoneSimulator\Debug\eximo-splashscreen-1242x2688.png.ResolveUTIs.stamp
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.iOS\obj\iPhoneSimulator\Debug\eximo-splashscreen-750X1334.png.ResolveUTIs.stamp
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.iOS\obj\iPhoneSimulator\Debug\eximo-splashscreen-828x1792.png.ResolveUTIs.stamp
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.iOS\obj\iPhoneSimulator\Debug\iphone7-eximo-splashscreen1.png.ResolveUTIs.stamp
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.iOS\obj\iPhoneSimulator\Debug\Icon1024.png.ResolveUTIs.stamp
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.iOS\obj\iPhoneSimulator\Debug\Icon180.png.ResolveUTIs.stamp
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.iOS\obj\iPhoneSimulator\Debug\Icon167.png.ResolveUTIs.stamp
