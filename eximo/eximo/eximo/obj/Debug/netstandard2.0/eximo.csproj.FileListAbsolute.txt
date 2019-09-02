@@ -2,6 +2,7 @@ C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\bin\D
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\bin\Debug\netstandard2.0\eximo.dll
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\bin\Debug\netstandard2.0\ref\eximo.dll
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\bin\Debug\netstandard2.0\eximo.pdb
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\obj\Debug\netstandard2.0\eximo.csprojAssemblyReference.cache
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\obj\Debug\netstandard2.0\eximo.AssemblyInfoInputs.cache
