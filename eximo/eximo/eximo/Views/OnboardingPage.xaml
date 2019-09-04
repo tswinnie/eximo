@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             mc:Ignorable="d"
+             x:Class="eximo.Views.OnboardingPage">
+
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <controls:CarouselViewControl x:Name="onboardingWalkThrough" ShowIndicators="True" 
+            IndicatorsShape="Circle" IndicatorsTintColor="LightGray" 
+            Orientation="Horizontal" InterPageSpacing="0"  ItemsSource="{Binding WalkthroughItems}" 
+            VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+            CurrentPageIndicatorTintColor="#ffffff" AnimateTransition="True">
+            <controls:CarouselViewControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid HorizontalOptions="FillAndExpand">
+                        <Image Source="{Binding Image}" Aspect="Fill" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                        <StackLayout Orientation="Vertical" Spacing="20" HorizontalOptions="Start" VerticalOptions="End" WidthRequest="300" Margin="20,50">
+                            <Frame HasShadow="False" BackgroundColor="#ff0088" CornerRadius="15"
+                                   Padding="0" HorizontalOptions="Start" VerticalOptions="Start"
+                                   WidthRequest="100" HeightRequest="30">
+                                <Label Text="{Binding Heading}" FontSize="14" TextColor="#ffffff" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                            </Frame>
+                            <Label x:Name="CaptionText" Text="{Binding Caption}" FontSize="20" TextColor="#ffffff" Margin="0,0,0,70"/>
+                            <Button Text="Next"/>
+                        </StackLayout>
+                    </Grid>
+                </DataTemplate>
+            </controls:CarouselViewControl.ItemTemplate>
+        </controls:CarouselViewControl>
+    </Grid>
+
+</ContentPage>
