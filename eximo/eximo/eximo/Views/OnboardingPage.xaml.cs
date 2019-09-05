@@ -20,13 +20,16 @@ namespace eximo.Views
         {
             InitializeComponent();
             this.BindingContext = this;
+
+          
         }
 
         protected override void OnAppearing()
         {
-            timer = new Timer(TimeSpan.FromSeconds(5).TotalMilliseconds) { AutoReset = true, Enabled = true };
-            timer.Elapsed += Timer_Elapsed;
+            //timer = new Timer(TimeSpan.FromSeconds(5).TotalMilliseconds) { AutoReset = true, Enabled = true };
+            //timer.Elapsed += Timer_Elapsed;         
             base.OnAppearing();
+
         }
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
@@ -37,6 +40,7 @@ namespace eximo.Views
                 if(onboardingWalkThrough.Position == 2)
                 {
                     onboardingWalkThrough.Position = 0;
+                    
                     return;
                 }
 
@@ -74,6 +78,38 @@ namespace eximo.Views
                     Image = "onboarding_three.png"
                 },
             });
+        }
+
+        private void GetStartedButton_Clicked(object sender, EventArgs e)
+        {
+            var ButtonClickHandler = (Button)sender;
+            StackLayout parentStackLayout = (StackLayout)ButtonClickHandler.Parent;
+            Button getStartedBTN = (Button)parentStackLayout.Children[0];
+            getStartedBTN.IsVisible = false;
+        }
+
+        private void TryOut_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NextButton_Clicked(object sender, EventArgs e)
+        {
+
+             
+                if (onboardingWalkThrough.Position == 2)
+                {
+                    //var ButtonClickHandler = (Button)sender;
+                    //StackLayout parentStackLayout = (StackLayout)ButtonClickHandler.Parent;
+                    //StackLayout Sibling = (StackLayout)parentStackLayout.;
+                    //StackLayout firstChildStackLayout = (StackLayout)ParentGridofStackLayout.Children[0];
+                    //Button getStartedBTN = (Button)firstChildStackLayout.Children[0];
+                    //getStartedBTN.IsVisible = true;
+
+                }
+
+                onboardingWalkThrough.Position += 1;
+
         }
     }
 }

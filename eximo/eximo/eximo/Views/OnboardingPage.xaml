@@ -7,24 +7,39 @@
              mc:Ignorable="d"
              x:Class="eximo.Views.OnboardingPage">
 
+
     <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-        <controls:CarouselViewControl x:Name="onboardingWalkThrough" ShowIndicators="True" 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+       <controls:CarouselViewControl x:Name="onboardingWalkThrough" ShowIndicators="True" 
             IndicatorsShape="Circle" IndicatorsTintColor="LightGray" 
             Orientation="Horizontal" InterPageSpacing="0"  ItemsSource="{Binding WalkthroughItems}" 
             VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
             CurrentPageIndicatorTintColor="#ffffff" AnimateTransition="True">
             <controls:CarouselViewControl.ItemTemplate>
                 <DataTemplate>
-                    <Grid HorizontalOptions="FillAndExpand">
-                        <Image Source="{Binding Image}" Aspect="Fill" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
-                        <StackLayout Orientation="Vertical" Spacing="20" HorizontalOptions="Start" VerticalOptions="End" WidthRequest="300" Margin="20,50">
-                            <Frame HasShadow="False" BackgroundColor="#ff0088" CornerRadius="15"
-                                   Padding="0" HorizontalOptions="Start" VerticalOptions="Start"
-                                   WidthRequest="100" HeightRequest="30">
-                                <Label Text="{Binding Heading}" FontSize="14" TextColor="#ffffff" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
-                            </Frame>
-                            <Label x:Name="CaptionText" Text="{Binding Caption}" FontSize="20" TextColor="#ffffff" Margin="0,0,0,70"/>
-                            <Button Text="Next"/>
+                    <Grid HorizontalOptions="FillAndExpand" BackgroundColor="#221B43">
+                        <Label x:Name="Title" Text="{Binding Heading}" FontSize="34" TextColor="#FFFFFF" FontAttributes="Bold" VerticalTextAlignment="Start" HorizontalOptions="Center" Margin="0,55" />
+                        <!--<Image Source="{Binding Image}" Aspect="AspectFill"  />-->
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="Center" VerticalOptions="End" WidthRequest="300" Margin="20,50">
+                            <Label x:Name="CaptionText" Text="{Binding Caption}" HorizontalTextAlignment="Center" FontSize="15" TextColor="#ffffff" Margin="0,20" HorizontalOptions="Center"/>
+                            <Button x:Name="getStartedButton" Text="Get Started" TextColor="#FFFFFF" BackgroundColor="#8759F2" FontSize="15" FontAttributes="Bold" Margin="0,0,0,20" IsVisible="False" Clicked="GetStartedButton_Clicked"/>
+                            <Button x:Name="tryOut" Text="Try It Out" TextColor="#8759F2" BackgroundColor="Transparent" FontSize="15" FontAttributes="Bold"  Margin="0,0,0,20" IsVisible="False" Clicked="TryOut_Clicked" />
+
+                        </StackLayout>
+
+               
+
+                        <StackLayout VerticalOptions="End" HorizontalOptions="Start" Margin="5">
+                            <Button x:Name="skipButton" Text="Skip" TextColor="#FFFFFF" BackgroundColor="Transparent" FontSize="15" FontAttributes="Bold" />
+                        </StackLayout>
+                        
+                        <StackLayout VerticalOptions="End" HorizontalOptions="End" Margin="5">
+                            <Button x:Name="nextButton" Text="Next" TextColor="#8759F2" BackgroundColor="Transparent" FontSize="15" FontAttributes="Bold" Clicked="NextButton_Clicked" />
                         </StackLayout>
                     </Grid>
                 </DataTemplate>

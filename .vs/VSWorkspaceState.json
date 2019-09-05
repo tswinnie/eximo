@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\eximo"
+    "\\eximo",
+    "\\eximo\\eximo",
+    "\\eximo\\eximo\\eximo.Android",
+    "\\eximo\\eximo\\eximo\\Views"
   ],
-  "SelectedNode": "\\.gitignore",
+  "SelectedNode": "\\eximo\\eximo\\eximo.Android\\Resources",
   "PreviewInSolutionExplorer": false
 }
