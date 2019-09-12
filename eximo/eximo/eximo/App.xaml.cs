@@ -11,7 +11,7 @@ namespace eximo
         {
             InitializeComponent();
 
-            MainPage = new OnboardingPage();
+            MainPage = new NavigationPage(new OnboardingPage());
         }
 
         protected override void OnStart()
