@@ -9,6 +9,10 @@ namespace eximo.Models
         public string Heading { get; set; }
         public string Caption { get; set; }
         public string Image { get; set; }
+        public bool IsGetStartedVisible { get; set; }
+        public bool IsTryNowVisible { get; set; }
+
+
 
     }
 }

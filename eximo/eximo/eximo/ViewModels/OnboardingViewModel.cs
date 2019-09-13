@@ -11,29 +11,42 @@ using Xamarin.Forms;
 
 namespace eximo.ViewModels
 {
-    public class OnboardingViewModel : INotifyPropertyChanged
+    public class OnboardingViewModel : BaseViewModel
     {
         public ICommand LastPageViewedCommand { get; set; }
         public ICommand MoveCarouselToNextCommand { get; set; }
         public ICommand SkipToLastPageCommand { get; set; }
-        public bool isGetStartedVisible { get; set; }
+        public CarouselViewControl _myCarouselRef { get; set; }
         public ObservableCollection<Walkthrough> WalkthroughItems { get => Load(); }    
-        public event PropertyChangedEventHandler PropertyChanged;
 
 
         public OnboardingViewModel()
         {
-            LastPageViewedCommand = new Command(ConfigureGetStarted);
+            //LastPageViewedCommand = new Command(CheckActiveCarouselPage);
             MoveCarouselToNextCommand = new Command<CarouselViewControl>(MoveCarouselToNext);
             SkipToLastPageCommand = new Command<CarouselViewControl>(SkipToLastPage);
-            isGetStartedVisible = false;
+            IsNextBtnVisible = true;
+            IsSkipBtnVisible = true;
+
         }
 
+        private void CheckActiveCarouselPage(object sender)
+        {
+
+            if(_myCarouselRef.Position != 2)
+            {
+                IsNextBtnVisible = true;
+                IsSkipBtnVisible = true;
+            }
+
+        }
 
         private void SkipToLastPage(CarouselViewControl myCarouselRef)
         {
             myCarouselRef.Position = 2;
-            
+            IsNextBtnVisible = false;
+            IsSkipBtnVisible = false;
+            _myCarouselRef = myCarouselRef;
         }
 
         private void MoveCarouselToNext(CarouselViewControl myCarouselRef)
@@ -42,14 +55,19 @@ namespace eximo.ViewModels
 
             if(myCarouselRef.Position == 2)
             {
-                isGetStartedVisible = true;
-                //call command method that hides try it out and get started button
+                IsNextBtnVisible = false;
+                IsSkipBtnVisible = false;
+                _myCarouselRef = myCarouselRef;
             }
+          
         }
 
-        private void ConfigureGetStarted(object obj)
+        private void ConfigureGetStarted(PositionSelectedEventArgs carousel)
         {
-          
+          if(carousel.NewValue == 2)
+            {
+
+            }
         }
 
         private ObservableCollection<Walkthrough> Load()
@@ -60,29 +78,33 @@ namespace eximo.ViewModels
                 {
                     Heading = "Create Profile",
                     Caption = "Exploer the worlds of mountains from the point of view of who cares!",
-                    Image = "onboarding_one.png"
+                    Image = "onboarding_one.png",
+                    IsGetStartedVisible = false,
+                    IsTryNowVisible = false,
+                
                 },
                 new Walkthrough
                 {
                     Heading = "Pick A Plan",
                     Caption = "Exploer the worlds of mountains from the point of view of who cares!",
-                    Image = "onboarding_two.png"
+                    Image = "onboarding_two.png",
+                    IsGetStartedVisible = false,
+                    IsTryNowVisible = false,
+             
                 },
                 new Walkthrough
                 {
                     Heading = "Give Authorization",
                     Caption = "Exploer the worlds of mountains from the point of view of who cares!",
-                    Image = "onboarding_three.png"
+                    Image = "onboarding_three.png",
+                    IsGetStartedVisible = true,
+                    IsTryNowVisible = true,
+          
                 },
             });
         }
 
-    
-    
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+  
 
     }
 }

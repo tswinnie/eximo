@@ -27,34 +27,9 @@ namespace eximo.Views
       
         }
 
-    
-        private void OnboardingWalkThrough_PositionSelected(object sender, CarouselView.FormsPlugin.Abstractions.PositionSelectedEventArgs e)
-        {
+
+      
 
 
-            //if(e.NewValue == 2)
-            //{
-            //    nextButton.IsVisible = false;
-             
-
-            //}
-        }
-
-        private void AddTryAndGetStartedBTN()
-        {
-            Button newButton = new Button { Text = "New Button" };
-
-            // Creating a binding
-            //newButton.SetBinding(Button.CommandProperty, new Binding("ViewModelProperty"));
-
-            // Set the binding context after SetBinding method calls for performance reasons
-            //newButton.BindingContext = viewModel;
-
-            // Set StackLayout in XAML to the class field
-            var parent = onboardingWalkThrough;
-
-            // Add the new button to the StackLayout
-            //parent.Children.Add(newButton);
-        }
     }
 }

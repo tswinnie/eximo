@@ -12,8 +12,8 @@
             <StackLayout x:Name="mainStack" Orientation="Vertical"  HorizontalOptions="Center" VerticalOptions="End" WidthRequest="300" Margin="20,50">
                 <Label x:Name="CaptionText" Text="{Binding Caption}" HorizontalTextAlignment="Center" FontSize="15" TextColor="#ffffff" Margin="0,20" HorizontalOptions="Center"/>
                 <StackLayout VerticalOptions="End">
-                    <Button x:Name="getStarted" Text="Get Started" TextColor="#FFFFFF" BackgroundColor="#8759F2" FontSize="15" FontAttributes="Bold" IsVisible="{Binding isGetStartedVisible}"/>
-                    <Button x:Name="tryOut" Text="Try It Out" TextColor="#8759F2" BackgroundColor="Transparent" FontSize="15" FontAttributes="Bold" IsVisible="False"/>
+                    <Button x:Name="getStarted" Text="Get Started" TextColor="#FFFFFF" BackgroundColor="#8759F2" FontSize="15" FontAttributes="Bold" IsVisible="{Binding IsGetStartedVisible}"/>
+                    <Button x:Name="tryOut" Text="Try It Out" TextColor="#8759F2" BackgroundColor="Transparent" FontSize="15" FontAttributes="Bold" IsVisible="{Binding IsTryNowVisible}"/>
                 </StackLayout>
             </StackLayout>
     

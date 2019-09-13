@@ -22,7 +22,6 @@
             Orientation="Horizontal" InterPageSpacing="0"  ItemsSource="{Binding WalkthroughItems}" 
             HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
             CurrentPageIndicatorTintColor="#ffffff" AnimateTransition="True" 
-            PositionSelected="OnboardingWalkThrough_PositionSelected" 
             PositionSelectedCommand="{Binding LastPageViewedCommand}">
             <controls:CarouselViewControl.ItemTemplate >
                 <DataTemplate>
@@ -31,8 +30,8 @@
             </controls:CarouselViewControl.ItemTemplate>
         </controls:CarouselViewControl>
             <Grid VerticalOptions="End">
-                <Button x:Name="skipBtn" Text="Skip" TextColor="#FFFFFF" BackgroundColor="Transparent" FontSize="15" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="End" Command="{Binding SkipToLastPageCommand}" CommandParameter="{Reference onboardingWalkThrough}"/>
-                <Button x:Name="nextBtn" Text="Next" TextColor="#8759F2" BackgroundColor="Transparent" FontSize="15" FontAttributes="Bold" HorizontalOptions="End" Padding="0" Margin="0" Command="{Binding MoveCarouselToNextCommand}" CommandParameter="{Reference onboardingWalkThrough, }" />
+                <Button x:Name="skipBtn" Text="Skip" TextColor="#FFFFFF" BackgroundColor="Transparent" FontSize="15" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="End" Command="{Binding SkipToLastPageCommand}" CommandParameter="{Reference onboardingWalkThrough}" IsVisible="{Binding IsSkipBtnVisible}"/>
+                <Button x:Name="nextBtn" Text="Next" TextColor="#8759F2" BackgroundColor="Transparent" FontSize="15" FontAttributes="Bold" HorizontalOptions="End" Padding="0" Margin="0" Command="{Binding MoveCarouselToNextCommand}" CommandParameter="{Reference onboardingWalkThrough}" IsVisible="{Binding IsNextBtnVisible}"/>
             </Grid>
         </Grid>
 
