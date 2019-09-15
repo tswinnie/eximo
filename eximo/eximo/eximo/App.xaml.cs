@@ -1,4 +1,6 @@
-﻿using System;
+﻿using eximo.Views;
+using eximo.Views.Onboarding;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +12,7 @@ namespace eximo
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new OnboardingPage());
         }
 
         protected override void OnStart()

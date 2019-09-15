@@ -4,11 +4,8 @@
     "\\eximo",
     "\\eximo\\eximo",
     "\\eximo\\eximo\\eximo.Android",
-    "\\eximo\\eximo\\eximo.Android\\Resources",
-    "\\eximo\\eximo\\eximo.Android\\Resources\\drawable-hdpi",
-    "\\eximo\\eximo\\eximo.Android\\Resources\\values",
-    "\\eximo\\eximo\\eximo.iOS\\Resources"
+    "\\eximo\\eximo\\eximo\\Views"
   ],
-  "SelectedNode": "\\eximo\\eximo\\eximo.Android\\Properties",
+  "SelectedNode": "\\eximo\\eximo\\eximo.Android\\Resources",
   "PreviewInSolutionExplorer": false
 }
