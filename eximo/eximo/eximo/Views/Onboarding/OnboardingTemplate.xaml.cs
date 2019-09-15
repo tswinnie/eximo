@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using eximo.Views.SignUp;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,5 +16,15 @@ namespace eximo.Views.Onboarding
         {
             InitializeComponent();
         }
+
+
+        private async void GetStarted_Clicked(object sender, EventArgs e)
+        {
+
+            await Navigation.PushAsync(new SignUpPage());
+
+        }
+
+    
     }
 }

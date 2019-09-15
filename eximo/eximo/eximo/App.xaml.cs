@@ -1,4 +1,5 @@
 ﻿using eximo.Views;
+using eximo.Views.Onboarding;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;

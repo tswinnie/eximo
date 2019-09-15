@@ -3,20 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              mc:Ignorable="d"
              x:Class="eximo.Views.Onboarding.OnboardingTemplate">
-  <ContentView.Content>
-        <Grid HorizontalOptions="FillAndExpand" BackgroundColor="#221B43">
-            <Label x:Name="Title" Text="{Binding Heading}" FontSize="34" TextColor="#FFFFFF" FontAttributes="Bold" VerticalTextAlignment="Start" HorizontalOptions="Center" Margin="0,55" />
-            <!--<Image Source="{Binding Image}" Aspect="AspectFill"  />-->
-            <StackLayout x:Name="mainStack" Orientation="Vertical"  HorizontalOptions="Center" VerticalOptions="End" WidthRequest="300" Margin="20,50">
-                <Label x:Name="CaptionText" Text="{Binding Caption}" HorizontalTextAlignment="Center" FontSize="15" TextColor="#ffffff" Margin="0,20" HorizontalOptions="Center"/>
-                <StackLayout VerticalOptions="End">
-                    <Button x:Name="getStarted" Text="Get Started" TextColor="#FFFFFF" BackgroundColor="#8759F2" FontSize="15" FontAttributes="Bold" IsVisible="{Binding IsGetStartedVisible}"/>
-                    <Button x:Name="tryOut" Text="Try It Out" TextColor="#8759F2" BackgroundColor="Transparent" FontSize="15" FontAttributes="Bold" IsVisible="{Binding IsTryNowVisible}"/>
+
+    <ContentView.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#221B43">
+            <StackLayout Padding="10">
+                <Label x:Name="Title" Text="{Binding Heading}" FontSize="34" TextColor="#FFFFFF" FontAttributes="Bold" VerticalTextAlignment="Start" HorizontalOptions="Center" Margin="10" />
+                <ffimageloadingsvg:SvgCachedImage  WidthRequest="300" HeightRequest="300" Source="{Binding CarouselImageSource}"                                                
+                HorizontalOptions="Center"  DownsampleToViewSize="True"/>
+                <Label x:Name="CaptionText" Text="{Binding Caption}" HorizontalTextAlignment="Center" FontSize="15" TextColor="#ffffff" />
+                <StackLayout VerticalOptions="End" Margin="5, 20">
+                    <Button x:Name="getStarted" Text="GET STARTED"  TextColor="#FFFFFF" BackgroundColor="#8759F2" FontSize="15" FontAttributes="Bold" Clicked="GetStarted_Clicked" IsVisible="{Binding IsGetStartedVisible}"/>
+                    <Button x:Name="tryOut" Text="TRY IT OUT" TextColor="#8759F2" BackgroundColor="Transparent" FontSize="15" FontAttributes="Bold" IsVisible="{Binding IsTryNowVisible}"/>
                 </StackLayout>
             </StackLayout>
-    
         </Grid>
     </ContentView.Content>
 </ContentView>
