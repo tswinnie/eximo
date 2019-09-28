@@ -13,3 +13,5 @@ C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\obj\D
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\obj\Debug\netstandard2.0\eximo.dll
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\obj\Debug\netstandard2.0\ref\eximo.dll
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\obj\Debug\netstandard2.0\eximo.pdb
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\obj\Debug\netstandard2.0\Views\SignUp\SignUp.xaml.g.cs
