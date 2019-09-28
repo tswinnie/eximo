@@ -1,4 +1,5 @@
-﻿using eximo.Views;
+﻿using eximo.Services;
+using eximo.Views;
 using eximo.Views.Onboarding;
 using System;
 using Xamarin.Forms;
@@ -11,7 +12,8 @@ namespace eximo
         public App()
         {
             InitializeComponent();
-
+            //init IOC Container
+            IocContainer.Initialize();
             MainPage = new NavigationPage(new OnboardingPage());
         }
 

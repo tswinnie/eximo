@@ -128,6 +128,10 @@
               "target": "Package",
               "version": "[5.2.0, )"
             },
+            "CommonServiceLocator": {
+              "target": "Package",
+              "version": "[2.0.4, )"
+            },
             "Microsoft.CodeAnalysis.Analyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -143,6 +147,14 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Unity": {
+              "target": "Package",
+              "version": "[5.11.1, )"
+            },
+            "Unity.ServiceLocation": {
+              "target": "Package",
+              "version": "[5.11.1, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",

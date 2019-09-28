@@ -19,11 +19,14 @@
 
   <ItemGroup>
     <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
+    <PackageReference Include="CommonServiceLocator" Version="2.0.4" />
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="2.9.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.2.1" />
+    <PackageReference Include="Unity" Version="5.11.1" />
+    <PackageReference Include="Unity.ServiceLocation" Version="5.11.1" />
     <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.FFImageLoading.Svg" Version="2.4.11.982" />
@@ -36,7 +39,6 @@
     <Folder Include="Data\" />
     <Folder Include="Assets\" />
     <Folder Include="APIS\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>

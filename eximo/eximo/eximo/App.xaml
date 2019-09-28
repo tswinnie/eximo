@@ -6,6 +6,9 @@
              mc:Ignorable="d"
              x:Class="eximo.App">
     <Application.Resources>
-
+            <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="#221B43"></Setter>
+                <Setter Property="BarTextColor" Value="#ffffff"></Setter>
+            </Style>
     </Application.Resources>
 </Application>

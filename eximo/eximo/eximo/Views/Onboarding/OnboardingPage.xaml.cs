@@ -1,4 +1,5 @@
-﻿using eximo.Models;
+﻿using CommonServiceLocator;
+using eximo.Models;
 using eximo.ViewModels;
 using eximo.ViewModels.Onboarding;
 using eximo.Views.Onboarding;
@@ -23,7 +24,7 @@ namespace eximo.Views.Onboarding
         public OnboardingPage()
         {
             InitializeComponent();
-            this.BindingContext = new OnboardingViewModel();
+            this.BindingContext = ServiceLocator.Current.GetInstance<OnboardingViewModel>();
 
       
         }
