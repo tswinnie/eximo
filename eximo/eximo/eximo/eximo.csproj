@@ -42,6 +42,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\eximo.core\eximo.core.csproj" />
+    <ProjectReference Include="..\..\eximo.data\eximo.data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Views\SignUp\SignUpPage.xaml.cs">
       <DependentUpon>SignUpPage.xaml</DependentUpon>
     </Compile>

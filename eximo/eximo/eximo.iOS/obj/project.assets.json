@@ -508,13 +508,35 @@
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
           "Xamarin.FFImageLoading.Svg": "2.4.11.982",
           "Xamarin.FFImageLoading.Svg.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.2.0.709249"
+          "Xamarin.Forms": "4.2.0.709249",
+          "eximo.core": "1.0.0",
+          "eximo.data": "1.0.0"
         },
         "compile": {
           "bin/placeholder/eximo.dll": {}
         },
         "runtime": {
           "bin/placeholder/eximo.dll": {}
+        }
+      },
+      "eximo.core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/eximo.core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/eximo.core.dll": {}
+        }
+      },
+      "eximo.data/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/eximo.data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/eximo.data.dll": {}
         }
       }
     },
@@ -997,13 +1019,35 @@
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
           "Xamarin.FFImageLoading.Svg": "2.4.11.982",
           "Xamarin.FFImageLoading.Svg.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.2.0.709249"
+          "Xamarin.Forms": "4.2.0.709249",
+          "eximo.core": "1.0.0",
+          "eximo.data": "1.0.0"
         },
         "compile": {
           "bin/placeholder/eximo.dll": {}
         },
         "runtime": {
           "bin/placeholder/eximo.dll": {}
+        }
+      },
+      "eximo.core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/eximo.core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/eximo.core.dll": {}
+        }
+      },
+      "eximo.data/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/eximo.data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/eximo.data.dll": {}
         }
       }
     },
@@ -1489,13 +1533,35 @@
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
           "Xamarin.FFImageLoading.Svg": "2.4.11.982",
           "Xamarin.FFImageLoading.Svg.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.2.0.709249"
+          "Xamarin.Forms": "4.2.0.709249",
+          "eximo.core": "1.0.0",
+          "eximo.data": "1.0.0"
         },
         "compile": {
           "bin/placeholder/eximo.dll": {}
         },
         "runtime": {
           "bin/placeholder/eximo.dll": {}
+        }
+      },
+      "eximo.core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/eximo.core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/eximo.core.dll": {}
+        }
+      },
+      "eximo.data/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/eximo.data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/eximo.data.dll": {}
         }
       }
     },
@@ -1981,13 +2047,35 @@
           "Xamarin.FFImageLoading.Forms": "2.4.11.982",
           "Xamarin.FFImageLoading.Svg": "2.4.11.982",
           "Xamarin.FFImageLoading.Svg.Forms": "2.4.11.982",
-          "Xamarin.Forms": "4.2.0.709249"
+          "Xamarin.Forms": "4.2.0.709249",
+          "eximo.core": "1.0.0",
+          "eximo.data": "1.0.0"
         },
         "compile": {
           "bin/placeholder/eximo.dll": {}
         },
         "runtime": {
           "bin/placeholder/eximo.dll": {}
+        }
+      },
+      "eximo.core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/eximo.core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/eximo.core.dll": {}
+        }
+      },
+      "eximo.data/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/eximo.data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/eximo.data.dll": {}
         }
       }
     }
@@ -2955,6 +3043,16 @@
       "type": "project",
       "path": "../eximo/eximo.csproj",
       "msbuildProject": "../eximo/eximo.csproj"
+    },
+    "eximo.core/1.0.0": {
+      "type": "project",
+      "path": "../../eximo.core/eximo.core.csproj",
+      "msbuildProject": "../../eximo.core/eximo.core.csproj"
+    },
+    "eximo.data/1.0.0": {
+      "type": "project",
+      "path": "../../eximo.data/eximo.data.csproj",
+      "msbuildProject": "../../eximo.data/eximo.data.csproj"
     }
   },
   "projectFileDependencyGroups": {
