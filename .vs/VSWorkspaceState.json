@@ -3,9 +3,8 @@
     "",
     "\\eximo",
     "\\eximo\\eximo",
-    "\\eximo\\eximo\\eximo.Android",
-    "\\eximo\\eximo\\eximo\\Views"
+    "\\eximo\\eximo\\eximo.Android"
   ],
-  "SelectedNode": "\\eximo\\eximo\\eximo.Android\\Resources",
+  "SelectedNode": "\\eximo\\eximo\\eximo.Android\\eximo.Android.csproj",
   "PreviewInSolutionExplorer": false
 }

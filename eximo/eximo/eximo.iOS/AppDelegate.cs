@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using CarouselView.FormsPlugin.iOS;
 using FFImageLoading.Forms.Platform;
 using FFImageLoading.Svg.Forms;
 using Foundation;
 using UIKit;
+using SQLitePCL;
 
 namespace eximo.iOS
 {
@@ -24,11 +26,24 @@ namespace eximo.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            Batteries_V2.Init();
+
             global::Xamarin.Forms.Forms.Init();
             CarouselViewRenderer.Init();
             CachedImageRenderer.Init();
             var ignore = typeof(SvgCachedImage);
-            LoadApplication(new App());
+            
+            var libPath = Path.Combine(
+                System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments),"..", "Library", "data");
+            
+            if (!Directory.Exists(libPath))
+            {
+                Directory.CreateDirectory(libPath);
+            }
+            
+            var dbPath = Path.Combine(libPath, "eximo.sqlite");
+            
+            LoadApplication(new App(dbPath));
 
             return base.FinishedLaunching(app, options);
         }

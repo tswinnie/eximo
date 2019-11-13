@@ -1,0 +1,13 @@
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.datacore\bin\Debug\netcoreapp3.0\eximo.datacore.deps.json
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.datacore\bin\Debug\netcoreapp3.0\eximo.datacore.dll
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.datacore\obj\Debug\netcoreapp3.0\eximo.datacore.csprojAssemblyReference.cache
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.datacore\obj\Debug\netcoreapp3.0\eximo.datacore.AssemblyInfoInputs.cache
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.datacore\obj\Debug\netcoreapp3.0\eximo.datacore.AssemblyInfo.cs
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.datacore\bin\Debug\netcoreapp3.0\eximo.core.dll
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.datacore\bin\Debug\netcoreapp3.0\eximo.core.pdb
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.datacore\obj\Debug\netcoreapp3.0\eximo.datacore.csproj.CopyComplete
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.datacore\bin\Debug\netcoreapp3.0\eximo.datacore.runtimeconfig.json
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.datacore\bin\Debug\netcoreapp3.0\eximo.datacore.runtimeconfig.dev.json
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.datacore\bin\Debug\netcoreapp3.0\eximo.datacore.pdb
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.datacore\obj\Debug\netcoreapp3.0\eximo.datacore.dll
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.datacore\obj\Debug\netcoreapp3.0\eximo.datacore.pdb

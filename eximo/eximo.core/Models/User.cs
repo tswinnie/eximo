@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace eximo.core.Models
 {
     public class User
     {
+        [Key]
         public int UserId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -15,10 +18,10 @@ namespace eximo.core.Models
         public Contact ContactInformation { get; set; }
         public PaymentInfo Payment { get; set; }
         public ServicePlan Plan { get; set; }
-        public List<AuthorizationType> Authorizations { get; set; }
-        public List<DataBroker> DataBrokers { get; set; }
-        public List<EmailMarketing> EmailMarketings { get; set; }
-        public List<Notification> Notifications { get; set; }
+        public IList<AuthorizationType> Authorizations { get; set; }
+        public IList<DataBroker> Databrokers { get; set; }
+        public IList<EmailMarketing>  EmailMarketings { get; set; }
+        public IList<Notification> Notifications { get; set; }
 
     }
 }

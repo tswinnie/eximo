@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace eximo.core.Models
@@ -13,6 +14,7 @@ namespace eximo.core.Models
 
     public class DataBroker
     {
+        [Key]
         public int DataBrokerId { get; set; }
         public string Name { get; set; }
         public string Website { get; set; }
@@ -24,5 +26,7 @@ namespace eximo.core.Models
 
         //foregin key
         public int UserId { get; set; }
+        public User User { get; set; }
+
     }
 }

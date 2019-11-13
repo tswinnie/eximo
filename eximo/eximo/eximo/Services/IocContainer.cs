@@ -1,4 +1,6 @@
 ﻿using CommonServiceLocator;
+using eximo.data;
+using eximo.data.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,9 +11,9 @@ namespace eximo.Services
 {
     public class IocContainer
     {
+
         public IocContainer()
         {
-
         }
 
 
@@ -20,15 +22,21 @@ namespace eximo.Services
             //init unity container
             UnityContainer iocContainer = new UnityContainer();
             RegisterServices(iocContainer);
+            ResolveServices(iocContainer);
         }
 
         private static void RegisterServices(UnityContainer iocContainer)
         {
-            //iocContainer.RegisterType<InterfaceHere, ClassImplementingInterface>();
-
+            //register IUserservice for db context
+            iocContainer.RegisterType<IUserService, UserService>();
 
             //set service locator provider       
             ServiceLocator.SetLocatorProvider(() => new UnityServiceLocator(iocContainer));
+        }
+
+        private static void ResolveServices(UnityContainer iocContainer)
+        {
+            //reslove classes that are injected
         }
     }
 }
