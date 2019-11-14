@@ -63,9 +63,120 @@ namespace eximo.data
                         LastName = "Brown",
                         UserName = "jbrown",
                         Email = "jbrown@mail.com",
-                        Password = "abc123"
+                        Password = "abc123",
                     }
-          
+                 );
+
+            modelBuilder.Entity<Contact>().HasData
+                (
+                new Contact
+                {
+                    ContactId = 1,
+                    UserId = 1
+                 
+                 
+                }
+
+                );
+
+            modelBuilder.Entity<Address>().HasData
+                (
+                   new Address
+                   {
+                       AddressId = 1,
+                       City = "Americus",
+                       State = "GA",
+                       PostalZip = "31709",
+                       StreetOne = "123 South lee st",
+                       StreetTwo = "example street two",
+                       UserId = 1
+
+                   }
+                );
+
+            modelBuilder.Entity<Phone>().HasData
+                (
+                    new Phone
+                   {
+                       PhoneId = 1,
+                       AreaCode = 229,
+                       PhoneNumber = 5555555,
+                       UserId = 1,
+                   }
+                   
+                );
+
+            modelBuilder.Entity<PaymentInfo>().HasData
+                (
+                new PaymentInfo
+                {
+                    PaymentId = 1,
+                    CardName = "James Brown",
+                    CardNumber = "123445677890",
+                    CardType = "Visa",
+                    SecurityNumber = 299,
+                    UserId = 1
+                }
+                );
+
+            modelBuilder.Entity<ServicePlan>().HasData
+                (
+                new ServicePlan
+                {
+                    ServicePlanId = 1,
+                    ServiceName = "Basic",
+                    UserId = 1
+                }
+                );
+
+            modelBuilder.Entity<AuthorizationType>().HasData
+                (
+              
+                    new AuthorizationType { AuthorizationId = 1, AuthorizationName = "Email", AuthorizationActive = true, UserId = 1},
+                    new AuthorizationType { AuthorizationId = 2, AuthorizationName = "Phone", AuthorizationActive = true, UserId = 1}
+
+                
+                );
+
+            modelBuilder.Entity<DataBroker>().HasData
+                (
+            
+                    new DataBroker { DataBrokerId = 1, Name = "Databroker One", Website = "http://databrokerone.com", Bio = "Some bio information", VerificationType = "Email", OptOutLink = "http://optoutlink.com", CaptureCustomerInfo = new List<string>()
+                    {
+                        "Email",
+                        "Phone"
+                    },
+                    UserId = 1,
+                    }
+                             
+                );
+
+            modelBuilder.Entity<EmailMarketing>().HasData
+                (
+                 new EmailMarketing
+                    {
+                        EmailMarketingId = 1,
+                        EmailMarketingStatus = Status.Active,
+                        MarketerName = "Email Marketing Name Example",
+                        Website = "http://emailmarketersite.com",
+                        UserId = 1,
+                    }
+                 
+                 
+            );
+
+            modelBuilder.Entity<Notification>().HasData
+                (
+               
+                    new Notification
+                    {
+                        NotificationId = 1,
+                        Title = "Notification Title",
+                        NotificationDate = new DateTime(),
+                        NotificationCompleted = false,
+                        UserId = 1
+                    }
+                
                 );
 
 
@@ -73,8 +184,8 @@ namespace eximo.data
 
         }
 
-        //CRUD  Operations 
-        public async Task<object[]> GetUserAsync(int userId)
+    //CRUD  Operations 
+    public async Task<object[]> GetUserAsync(int userId)
         {
             var userObj = new object[2];
 
