@@ -1,7 +1,10 @@
-﻿using eximo.Services;
+﻿using eximo.data;
+using eximo.Models;
+using eximo.Services;
 using eximo.Views;
 using eximo.Views.Onboarding;
 using System;
+using System.Diagnostics;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,11 +12,18 @@ namespace eximo
 {
     public partial class App : Application
     {
-        public App()
+        public EximoDataContext _eximoDataContext;
+
+        public App(string dbPath)
         {
-            InitializeComponent();
+            Debug.WriteLine($"Database located at: {dbPath}");
+
+            _eximoDataContext = new EximoDataContext(dbPath);
+            
             //init IOC Container
             IocContainer.Initialize();
+
+            InitializeComponent();
             MainPage = new NavigationPage(new OnboardingPage());
         }
 
