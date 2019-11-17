@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 using eximo.core.Models;
+using eximo.data;
 
 namespace eximo.data.Services
 {
@@ -10,15 +12,16 @@ namespace eximo.data.Services
     {
         private EximoDataContext _eximoContextRef;
 
-        public UserService(string dbPath)
+        public UserService(EximoDataContext context)
         {
-            _eximoContextRef = new EximoDataContext(dbPath);
+            _eximoContextRef = context;
         }
 
         public async Task<object[]> AddNewUserAsync(User user)
         {
             var response = await _eximoContextRef.AddUserAsync(user).ConfigureAwait(false);
             return response;
+
         }
 
         public async Task<object[]> GetUsersAsync(int userId)

@@ -12,14 +12,13 @@ namespace eximo
 {
     public partial class App : Application
     {
-        public static EximoDataContext EximoDataContext;
-
-        public Repo Repository { get; }
+        public EximoDataContext _eximoDataContext;
 
         public App(string dbPath)
         {
             Debug.WriteLine($"Database located at: {dbPath}");
-            new EximoDataContext(dbPath);
+
+            _eximoDataContext = new EximoDataContext(dbPath);
             
             //init IOC Container
             IocContainer.Initialize();

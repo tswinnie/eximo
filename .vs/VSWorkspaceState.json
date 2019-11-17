@@ -3,8 +3,10 @@
     "",
     "\\eximo",
     "\\eximo\\eximo",
-    "\\eximo\\eximo\\eximo.Android"
+    "\\eximo\\eximo\\eximo.iOS",
+    "\\eximo\\eximo\\eximo.iOS\\obj",
+    "\\eximo\\eximo\\eximo.iOS\\obj\\iPhoneSimulator\\Debug"
   ],
-  "SelectedNode": "\\eximo\\eximo\\eximo.Android\\eximo.Android.csproj",
+  "SelectedNode": "\\eximo\\eximo\\eximo.iOS\\obj\\iPhoneSimulator",
   "PreviewInSolutionExplorer": false
 }

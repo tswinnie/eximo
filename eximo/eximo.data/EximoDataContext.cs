@@ -4,13 +4,14 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 namespace eximo.data
 {
     public class EximoDataContext : DbContext
     {
-        private string _dbPath;
+        public static string _dbPath { get; set; }
 
         public DbSet<User> Users { get; set; }
         public DbSet<AuthorizationType> AuthorizationTypes { get; set; }
@@ -31,7 +32,7 @@ namespace eximo.data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            Debug.WriteLine("Configuring eximo database...");
+            Debug.WriteLine("Configuring eximo database...");          
             optionsBuilder.UseSqlite($"Filename={_dbPath}");
         }
 
@@ -191,6 +192,7 @@ namespace eximo.data
 #endif
 
         }
+
 
         //CRUD  Operations 
         public async Task<object[]> GetUserAsync(int userId)
