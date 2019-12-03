@@ -1,10 +1,12 @@
 ﻿using eximo.core.Models;
+using eximo.data.Services;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 
 namespace eximo.data
@@ -12,6 +14,8 @@ namespace eximo.data
     public class EximoDataContext : DbContext
     {
         public static string _dbPath { get; set; }
+
+        private EncryptionService _encryptionService;
 
         public DbSet<User> Users { get; set; }
         public DbSet<AuthorizationType> AuthorizationTypes { get; set; }
@@ -26,6 +30,7 @@ namespace eximo.data
         public EximoDataContext(string dbPath) : base()
         {
             _dbPath = dbPath;
+            _encryptionService = new EncryptionService();
             Database.Migrate();
 
         }
@@ -40,18 +45,38 @@ namespace eximo.data
         {
 
             Debug.WriteLine("Creating DB Model...");
-            modelBuilder.Entity<User>().HasKey(p => p.UserId);
-            modelBuilder.Entity<AuthorizationType>().HasOne(p => p.User).WithMany(u => u.Authorizations).HasForeignKey(p => p.UserId);
-            modelBuilder.Entity<Contact>().HasOne(p => p.User).WithOne(u => u.ContactInformation);
-            modelBuilder.Entity<DataBroker>().HasOne(p => p.User).WithMany(u => u.Databrokers).HasForeignKey(p => p.UserId);
-            modelBuilder.Entity<EmailMarketing>().HasOne(p => p.User).WithMany(u => u.EmailMarketings).HasForeignKey(p => p.UserId);
-            modelBuilder.Entity<Notification>().HasOne(p => p.User).WithMany(u => u.Notifications).HasForeignKey(p => p.UserId);
-            modelBuilder.Entity<PaymentInfo>().HasOne(p => p.User).WithOne(u => u.Payment);
-            modelBuilder.Entity<ServicePlan>().HasOne(p => p.User).WithOne(u => u.Plan);
-            modelBuilder.Entity<DataBroker>().Property(p => p.CaptureCustomerInfo)
-            .HasConversion(
-            v => JsonConvert.SerializeObject(v),
-            v => JsonConvert.DeserializeObject<List<string>>(v));
+            using (Aes myAes = Aes.Create())
+            {
+                
+
+                modelBuilder.Entity<User>().HasKey(p => p.UserId);
+                modelBuilder.Entity<User>().Property(p => p.FirstName).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<User>().Property(p => p.LastName).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<User>().Property(p => p.UserName).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<User>().Property(p => p.Email).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<User>().Property(p => p.Password).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+
+
+                modelBuilder.Entity<AuthorizationType>().Property(p => p.AuthorizationName).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<AuthorizationType>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<AuthorizationType>().Property(p => p.AuthorizationActive).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => Convert.ToBoolean(_encryptionService.Decrypt<bool>(p, myAes.Key, myAes.IV)));
+
+                modelBuilder.Entity<Contact>().HasOne(p => p.User).WithOne(u => u.ContactInformation);
+
+                modelBuilder.Entity<DataBroker>().Property(p => p.Name).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<DataBroker>().Property(p => p.Website).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<DataBroker>().Property(p => p.VerificationType).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<DataBroker>().Property(p => p.OptOutLink).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<DataBroker>().Property(p => p.Bio).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<DataBroker>().Property(p => p.CaptureCustomerInfo).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => (CapturedCustomerData)Enum.Parse(typeof(CapturedCustomerData),_encryptionService.Decrypt<Enum>(p, myAes.Key, myAes.IV)));
+                modelBuilder.Entity<DataBroker>().Property(p => p.CustomerAccountStatus).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => (Status)Enum.Parse(typeof(Status), _encryptionService.Decrypt<Enum>(p, myAes.Key, myAes.IV)));
+
+                //need to finish updating properties with encryption/decryption
+                modelBuilder.Entity<EmailMarketing>().HasOne(p => p.User).WithMany(u => u.EmailMarketings).HasForeignKey(p => p.UserId);
+                modelBuilder.Entity<Notification>().HasOne(p => p.User).WithMany(u => u.Notifications).HasForeignKey(p => p.UserId);
+                modelBuilder.Entity<PaymentInfo>().HasOne(p => p.User).WithOne(u => u.Payment);
+                modelBuilder.Entity<ServicePlan>().HasOne(p => p.User).WithOne(u => u.Plan);
+     
+            }
 
             //add data if in Debug
 #if DEBUG
