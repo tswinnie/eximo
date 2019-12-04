@@ -5,6 +5,7 @@ using eximo.Views;
 using eximo.Views.Onboarding;
 using System;
 using System.Diagnostics;
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,7 +20,7 @@ namespace eximo
             Debug.WriteLine($"Database located at: {dbPath}");
 
             _eximoDataContext = new EximoDataContext(dbPath);
-            
+
             //init IOC Container
             IocContainer.Initialize();
 
@@ -30,6 +31,7 @@ namespace eximo
         protected override void OnStart()
         {
             // Handle when your app starts
+
         }
 
         protected override void OnSleep()

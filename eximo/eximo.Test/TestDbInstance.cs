@@ -40,10 +40,8 @@ namespace eximo.Test
             modelBuilder.Entity<Notification>().HasOne(p => p.User).WithMany(u => u.Notifications).HasForeignKey(p => p.UserId);
             modelBuilder.Entity<PaymentInfo>().HasOne(p => p.User).WithOne(u => u.Payment);
             modelBuilder.Entity<ServicePlan>().HasOne(p => p.User).WithOne(u => u.Plan);
-            modelBuilder.Entity<DataBroker>().Property(p => p.CaptureCustomerInfo)
-            .HasConversion(
-            v => JsonConvert.SerializeObject(v),
-            v => JsonConvert.DeserializeObject<List<string>>(v));     
+            modelBuilder.Entity<DataBroker>().HasOne(p => p.User).WithMany(u => u.Databrokers);
+             
 
         }
 

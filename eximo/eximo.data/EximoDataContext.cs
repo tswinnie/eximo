@@ -33,6 +33,7 @@ namespace eximo.data
             _encryptionService = new EncryptionService();
             Database.Migrate();
 
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -56,11 +57,17 @@ namespace eximo.data
                 modelBuilder.Entity<User>().Property(p => p.Email).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
                 modelBuilder.Entity<User>().Property(p => p.Password).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
 
-
                 modelBuilder.Entity<AuthorizationType>().Property(p => p.AuthorizationName).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<AuthorizationType>(p, myAes.Key, myAes.IV));
                 modelBuilder.Entity<AuthorizationType>().Property(p => p.AuthorizationActive).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => Convert.ToBoolean(_encryptionService.Decrypt<bool>(p, myAes.Key, myAes.IV)));
 
-                modelBuilder.Entity<Contact>().HasOne(p => p.User).WithOne(u => u.ContactInformation);
+                modelBuilder.Entity<Phone>().Property(p => p.AreaCode).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => Int32.Parse(_encryptionService.Decrypt<int>(p, myAes.Key, myAes.IV)));
+                modelBuilder.Entity<Phone>().Property(p => p.PhoneNumber).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => Int32.Parse(_encryptionService.Decrypt<int>(p, myAes.Key, myAes.IV)));
+
+                modelBuilder.Entity<Address>().Property(p => p.City).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<Address>().Property(p => p.StreetOne).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<Address>().Property(p => p.StreetTwo).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<Address>().Property(p => p.State).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<Address>().Property(p => p.PostalZip).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
 
                 modelBuilder.Entity<DataBroker>().Property(p => p.Name).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
                 modelBuilder.Entity<DataBroker>().Property(p => p.Website).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
@@ -70,12 +77,24 @@ namespace eximo.data
                 modelBuilder.Entity<DataBroker>().Property(p => p.CaptureCustomerInfo).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => (CapturedCustomerData)Enum.Parse(typeof(CapturedCustomerData),_encryptionService.Decrypt<Enum>(p, myAes.Key, myAes.IV)));
                 modelBuilder.Entity<DataBroker>().Property(p => p.CustomerAccountStatus).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => (Status)Enum.Parse(typeof(Status), _encryptionService.Decrypt<Enum>(p, myAes.Key, myAes.IV)));
 
-                //need to finish updating properties with encryption/decryption
-                modelBuilder.Entity<EmailMarketing>().HasOne(p => p.User).WithMany(u => u.EmailMarketings).HasForeignKey(p => p.UserId);
-                modelBuilder.Entity<Notification>().HasOne(p => p.User).WithMany(u => u.Notifications).HasForeignKey(p => p.UserId);
-                modelBuilder.Entity<PaymentInfo>().HasOne(p => p.User).WithOne(u => u.Payment);
-                modelBuilder.Entity<ServicePlan>().HasOne(p => p.User).WithOne(u => u.Plan);
-     
+                modelBuilder.Entity<EmailMarketing>().Property(p => p.MarketerName).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<EmailMarketing>().Property(p => p.Website).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<EmailMarketing>().Property(p => p.MarketerName).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<EmailMarketing>().Property(p => p.EmailMarketingStatus).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => (Status)Enum.Parse(typeof(Status), _encryptionService.Decrypt<Enum>(p, myAes.Key, myAes.IV)));
+
+
+                modelBuilder.Entity<Notification>().Property(p => p.Title).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<Notification>().Property(p => p.Description).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<Notification>().Property(p => p.Title).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<Notification>().Property(p => p.NotificationDate).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => Convert.ToDateTime(_encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV)));
+
+                modelBuilder.Entity<PaymentInfo>().Property(p => p.CardName).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<PaymentInfo>().Property(p => p.CardNumber).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<PaymentInfo>().Property(p => p.CardType).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+                modelBuilder.Entity<PaymentInfo>().Property(p => p.SecurityNumber).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => Int32.Parse(_encryptionService.Decrypt<int>(p, myAes.Key, myAes.IV)));
+
+                modelBuilder.Entity<ServicePlan>().Property(p => p.ServiceName).HasConversion(p => _encryptionService.Encrypt(p, myAes.Key, myAes.IV), p => _encryptionService.Decrypt<string>(p, myAes.Key, myAes.IV));
+
             }
 
             //add data if in Debug
@@ -175,15 +194,11 @@ namespace eximo.data
                         Bio = "Some bio information",
                         VerificationType = "Email",
                         OptOutLink = "http://optoutlink.com",
-                        CaptureCustomerInfo = new List<string>()
-                    {
-                        "Email",
-                        "Phone"
-                    },
+                        CaptureCustomerInfo = CapturedCustomerData.Address,
                         UserId = 1,
                     }
 
-                );
+                ); 
 
             modelBuilder.Entity<EmailMarketing>().HasData
                 (
