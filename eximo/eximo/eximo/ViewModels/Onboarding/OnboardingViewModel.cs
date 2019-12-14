@@ -3,6 +3,7 @@ using eximo.Models.Onboarding;
 using eximo.Views.SignUp;
 using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -20,7 +21,7 @@ namespace eximo.ViewModels.Onboarding
         public ObservableCollection<Walkthrough> WalkthroughItems { get => Load(); }    
 
 
-        public OnboardingViewModel()
+        public  OnboardingViewModel()
         {
             LastPageViewedCommand = new Command(CheckActiveCarouselPage);
             MoveCarouselToNextCommand = new Command<CarouselViewControl>(MoveCarouselToNext);
@@ -29,6 +30,7 @@ namespace eximo.ViewModels.Onboarding
             IsSkipBtnVisible = true;
 
         }
+   
 
         private void CheckActiveCarouselPage(object obj)
         {

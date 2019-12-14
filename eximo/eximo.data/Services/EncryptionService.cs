@@ -8,7 +8,10 @@ namespace eximo.data.Services
 {
     public class EncryptionService : IEncryptionService
     {
+        //TODO this will need to be stored in a more secure place
         private static RijndaelManaged _encryptProvider;
+        public static byte[] salt = Encoding.ASCII.GetBytes("61981F23D8836E91");
+        public static Rfc2898DeriveBytes key = new Rfc2898DeriveBytes("25D0239DC0FA9D2BE006A18911B0EF9FD21C95D33C36C2603F8380E9660F09AB", salt);
 
         public EncryptionService()
         {
@@ -16,8 +19,8 @@ namespace eximo.data.Services
             _encryptProvider = new RijndaelManaged();
             _encryptProvider.BlockSize = 128;
             _encryptProvider.KeySize = 256;
-            _encryptProvider.GenerateIV();
-            _encryptProvider.GenerateKey();
+            _encryptProvider.Key = key.GetBytes(_encryptProvider.KeySize / 8);
+            _encryptProvider.IV = key.GetBytes(_encryptProvider.BlockSize / 8);
             _encryptProvider.Padding = PaddingMode.PKCS7;
 
         }

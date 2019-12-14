@@ -18,9 +18,6 @@ namespace eximo.data
     {
         public static string _dbPath { get; set; }
         private EncryptionService _encryptionService;
-
-        public byte[] Key { get; }
-        public byte[] IV { get; }
         public DbSet<User> Users { get; set; }
         public DbSet<AuthorizationType> AuthorizationTypes { get; set; }
         public DbSet<Contact> Contacts { get; set; }
@@ -35,7 +32,7 @@ namespace eximo.data
         {
             _dbPath = dbPath;
             _encryptionService = new EncryptionService();
-            Database.Migrate();
+            Database.EnsureCreated();
 
         }
 
