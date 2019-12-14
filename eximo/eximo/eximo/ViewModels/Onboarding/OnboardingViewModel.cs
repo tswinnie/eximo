@@ -30,9 +30,6 @@ namespace eximo.ViewModels.Onboarding
 
         }
 
-   
- 
-
         private void CheckActiveCarouselPage(object obj)
         {
 
@@ -78,7 +75,7 @@ namespace eximo.ViewModels.Onboarding
             }
         }
 
-        private ObservableCollection<Walkthrough> Load()
+        private  ObservableCollection<Walkthrough> Load()
         {
             return new ObservableCollection<Walkthrough>(new[]
             {
