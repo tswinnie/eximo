@@ -11,7 +11,6 @@ C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\obj\D
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\obj\Debug\netstandard2.0\Views\Onboarding\OnboardingPage.xaml.g.cs
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\obj\Debug\netstandard2.0\Views\Onboarding\OnboardingTemplate.xaml.g.cs
-C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\obj\Debug\netstandard2.0\Views\SignUp\SignUp.xaml.g.cs
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\obj\Debug\netstandard2.0\Views\SignUp\SignUpPage.xaml.g.cs
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\obj\Debug\netstandard2.0\eximo.AssemblyInfoInputs.cache
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo\obj\Debug\netstandard2.0\eximo.AssemblyInfo.cs

@@ -5,20 +5,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="eximo.Views.SignUp.SignUpPage"
-             BackgroundColor="#221B43">
+             BackgroundColor="#221B43" x:Name="signUpPage">
     <ContentPage.Content>
         <StackLayout>
             <Frame x:Name="signUpCard" Margin="15" HeightRequest="{OnPlatform Android=320, iOS=300}" CornerRadius="4">
-                <StackLayout>
+                <StackLayout x:Name="signUpContainer">
                     <Label Text="Sign Up" FontSize="28" FontAttributes="Bold" TextColor="#000000"  Margin="{OnPlatform iOS=10, Android=5}"/>
-                    <Entry x:Name="userName" Placeholder="Username" FontSize="15" PlaceholderColor="#000000" HeightRequest="{OnPlatform iOS=40, Android=40}" Margin="{OnPlatform iOS=5, Android=5}"/>
-                    <Entry x:Name="email" Keyboard="Email" Placeholder="Email" FontSize="15" PlaceholderColor="#000000" HeightRequest="{OnPlatform iOS=40, Android=40}" Margin="{OnPlatform iOS=5, Android=5}"/>
-                    <Entry x:Name="password" IsPassword="True" Placeholder="Password" FontSize="15" PlaceholderColor="#000000" HeightRequest="{OnPlatform iOS=40, Android=40}" Margin="{OnPlatform iOS=5, Android=5}" />
-                    <Entry x:Name="passwordConfirm" IsPassword="True" Placeholder="Confirm Password" FontSize="15" PlaceholderColor="#000000" HeightRequest="{OnPlatform iOS=40, Android=40}" Margin="{OnPlatform iOS=5, Android=5}"/>
+                    <Entry x:Name="userName" Placeholder="Username" FontSize="15" PlaceholderColor="#000000" HeightRequest="{OnPlatform iOS=40, Android=40}" Margin="{OnPlatform iOS=5, Android=5}" TextChanged="userName_TextChanged"/>
+                    <Label x:Name="userNameErrorText" Text="The Username field is required." TextColor="Red" IsVisible="False" FontSize="15" LineHeight="0" Padding="0" Margin="0"/>
+                    <Entry x:Name="email" Keyboard="Email" Placeholder="Email" FontSize="15" PlaceholderColor="#000000" HeightRequest="{OnPlatform iOS=40, Android=40}" Margin="{OnPlatform iOS=5, Android=5}" TextChanged="email_TextChanged"/>
+                    <Label x:Name="emailErrorText" Text="The Email field is required." TextColor="Red" IsVisible="False"/>
+                    <Entry x:Name="password" IsPassword="True" Placeholder="Password" FontSize="15" PlaceholderColor="#000000" HeightRequest="{OnPlatform iOS=40, Android=40}" Margin="{OnPlatform iOS=5, Android=5}" TextChanged="password_TextChanged"/>
+                    <Label x:Name="passwordErrorText" Text="The Password field is required." TextColor="Red" IsVisible="False"/>
+                    <Entry x:Name="passwordConfirm" IsPassword="True" Placeholder="Confirm Password" FontSize="15" PlaceholderColor="#000000" HeightRequest="{OnPlatform iOS=40, Android=40}" Margin="{OnPlatform iOS=5, Android=5}" TextChanged="passwordConfirm_TextChanged"/>
+                    <Label x:Name="passwordConfirmErrorText" Text="The Confirmation Password field is required." TextColor="Red" IsVisible="False"/>
+                    <Label x:Name="passwordConfirmNoMatch" Text="The Passwords don't match." TextColor="Red" IsVisible="False"/>
+
                 </StackLayout>
             </Frame>
             <StackLayout Margin="15">
-                <Button x:Name="nextSignUpBtn" Text="NEXT" BackgroundColor="#8759F2" TextColor="#ffffff" FontSize="15"/>
+                <Button x:Name="nextSignUpBtn" Text="NEXT" BackgroundColor="#8759F2" TextColor="#ffffff" FontSize="15" Command="{Binding ValidateUserSignup}" CommandParameter="{x:Reference signUpPage}"/>
                 <Label  Text="Already have an account?" TextColor="#ffffff" HorizontalOptions="Center" Margin="5"/>
                 <Button x:Name="loginButton" Text="Login" BackgroundColor="Transparent"  TextColor="#8759F2" FontSize="13" FontAttributes="Bold"/>
                 <Button x:Name="tryOutButton" Text="Try It Out" BackgroundColor="Transparent"  TextColor="#8759F2" FontSize="13" FontAttributes="Bold"/>
