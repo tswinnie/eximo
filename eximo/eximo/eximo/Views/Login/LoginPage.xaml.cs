@@ -19,16 +19,39 @@ namespace eximo.Views.Login
             InitializeComponent();
             NavigationPage.SetHasBackButton(this, false);
             this.BindingContext = ServiceLocator.Current.GetInstance<LoginPageViewModel>();
+            //disable the submit button
+            loginButton.IsEnabled = false;
         }
 
         private void userName_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+            if (string.IsNullOrEmpty(userName.Text) || string.IsNullOrEmpty(password.Text))
+            {
+                //disable the submit button
+                loginButton.IsEnabled = false;
+            }
+            else
+            {
+                //disable the submit button
+                loginButton.IsEnabled = true;
+            }
+
+
         }
 
         private void password_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(password.Text) || string.IsNullOrEmpty(userName.Text))
+            {
+                //disable the submit button
+                loginButton.IsEnabled = false;
+            }
+            else
+            {
+                //disable the submit button
+                loginButton.IsEnabled = true;
+            }
         }
     }
 }
