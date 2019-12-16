@@ -1,0 +1,17 @@
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\bin\Debug\netcoreapp2.2\eximo.ConsoleBuildProject.deps.json
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\bin\Debug\netcoreapp2.2\eximo.ConsoleBuildProject.runtimeconfig.json
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\bin\Debug\netcoreapp2.2\eximo.ConsoleBuildProject.runtimeconfig.dev.json
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\bin\Debug\netcoreapp2.2\eximo.ConsoleBuildProject.dll
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\bin\Debug\netcoreapp2.2\eximo.ConsoleBuildProject.pdb
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\bin\Debug\netcoreapp2.2\eximo.core.dll
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\bin\Debug\netcoreapp2.2\eximo.data.dll
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\bin\Debug\netcoreapp2.2\eximo.dll
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\bin\Debug\netcoreapp2.2\eximo.core.pdb
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\bin\Debug\netcoreapp2.2\eximo.data.pdb
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\bin\Debug\netcoreapp2.2\eximo.pdb
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\obj\Debug\netcoreapp2.2\eximo.ConsoleBuildProject.csprojAssemblyReference.cache
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\obj\Debug\netcoreapp2.2\eximo.ConsoleBuildProject.AssemblyInfoInputs.cache
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\obj\Debug\netcoreapp2.2\eximo.ConsoleBuildProject.AssemblyInfo.cs
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\obj\Debug\netcoreapp2.2\eximo.ConsoleBuildProject.csproj.CopyComplete
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\obj\Debug\netcoreapp2.2\eximo.ConsoleBuildProject.dll
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\obj\Debug\netcoreapp2.2\eximo.ConsoleBuildProject.pdb

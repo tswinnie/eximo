@@ -1,0 +1,10 @@
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\bin\Debug\netcoreapp3.0\eximo.ConsoleBuildProject.exe
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\bin\Debug\netcoreapp3.0\eximo.ConsoleBuildProject.deps.json
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\bin\Debug\netcoreapp3.0\eximo.ConsoleBuildProject.runtimeconfig.json
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\bin\Debug\netcoreapp3.0\eximo.ConsoleBuildProject.runtimeconfig.dev.json
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\bin\Debug\netcoreapp3.0\eximo.ConsoleBuildProject.dll
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\bin\Debug\netcoreapp3.0\eximo.ConsoleBuildProject.pdb
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\obj\Debug\netcoreapp3.0\eximo.ConsoleBuildProject.AssemblyInfoInputs.cache
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\obj\Debug\netcoreapp3.0\eximo.ConsoleBuildProject.AssemblyInfo.cs
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\obj\Debug\netcoreapp3.0\eximo.ConsoleBuildProject.dll
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.ConsoleBuildProject\obj\Debug\netcoreapp3.0\eximo.ConsoleBuildProject.pdb

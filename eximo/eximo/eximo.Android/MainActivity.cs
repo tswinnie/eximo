@@ -9,6 +9,7 @@ using Android.OS;
 using CarouselView.FormsPlugin.Android;
 using FFImageLoading.Forms.Platform;
 using FFImageLoading.Svg.Forms;
+using System.IO;
 
 namespace eximo.Droid
 {
@@ -27,7 +28,8 @@ namespace eximo.Droid
             CarouselViewRenderer.Init();
             CachedImageRenderer.Init(true);
             var ignore = typeof(SvgCachedImage);
-            LoadApplication(new App());
+            var dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments), "eximo.sqlite");
+            LoadApplication(new App(dbPath));
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
