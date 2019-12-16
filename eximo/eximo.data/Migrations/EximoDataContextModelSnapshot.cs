@@ -21,15 +21,15 @@ namespace eximo.data.Migrations
                     b.Property<int>("AddressId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("City");
+                    b.Property<byte[]>("City");
 
-                    b.Property<string>("PostalZip");
+                    b.Property<byte[]>("PostalZip");
 
-                    b.Property<string>("State");
+                    b.Property<byte[]>("State");
 
-                    b.Property<string>("StreetOne");
+                    b.Property<byte[]>("StreetOne");
 
-                    b.Property<string>("StreetTwo");
+                    b.Property<byte[]>("StreetTwo");
 
                     b.Property<int>("UserId");
 
@@ -41,11 +41,11 @@ namespace eximo.data.Migrations
                         new
                         {
                             AddressId = 1,
-                            City = "Americus",
-                            PostalZip = "31709",
-                            State = "GA",
-                            StreetOne = "123 South lee st",
-                            StreetTwo = "example street two",
+                            City = new byte[] { 48, 179, 38, 11, 193, 97, 127, 35, 83, 226, 192, 222, 244, 75, 235, 229 },
+                            PostalZip = new byte[] { 76, 79, 32, 83, 107, 203, 61, 4, 55, 68, 108, 118, 217, 126, 165, 232 },
+                            State = new byte[] { 10, 214, 145, 45, 6, 9, 217, 120, 246, 118, 239, 147, 166, 185, 126, 172 },
+                            StreetOne = new byte[] { 127, 236, 241, 141, 208, 178, 24, 135, 89, 89, 243, 1, 205, 92, 75, 113, 183, 6, 105, 252, 110, 142, 198, 19, 96, 228, 253, 42, 110, 92, 21, 186 },
+                            StreetTwo = new byte[] { 141, 95, 93, 58, 116, 210, 38, 58, 135, 148, 148, 8, 187, 41, 138, 129, 235, 99, 202, 132, 42, 172, 101, 194, 92, 139, 154, 208, 8, 194, 198, 204 },
                             UserId = 1
                         });
                 });
@@ -55,9 +55,10 @@ namespace eximo.data.Migrations
                     b.Property<int>("AuthorizationId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<bool>("AuthorizationActive");
+                    b.Property<byte[]>("AuthorizationActive")
+                        .IsRequired();
 
-                    b.Property<string>("AuthorizationName");
+                    b.Property<byte[]>("AuthorizationName");
 
                     b.Property<int>("UserId");
 
@@ -71,15 +72,15 @@ namespace eximo.data.Migrations
                         new
                         {
                             AuthorizationId = 1,
-                            AuthorizationActive = true,
-                            AuthorizationName = "Email",
+                            AuthorizationActive = new byte[] { 9, 78, 147, 202, 111, 68, 133, 56, 149, 56, 17, 160, 214, 30, 64, 52 },
+                            AuthorizationName = new byte[] { 95, 144, 101, 100, 53, 172, 236, 109, 199, 65, 233, 75, 254, 27, 60, 120 },
                             UserId = 1
                         },
                         new
                         {
                             AuthorizationId = 2,
-                            AuthorizationActive = true,
-                            AuthorizationName = "Phone",
+                            AuthorizationActive = new byte[] { 9, 78, 147, 202, 111, 68, 133, 56, 149, 56, 17, 160, 214, 30, 64, 52 },
+                            AuthorizationName = new byte[] { 183, 43, 50, 178, 240, 5, 106, 102, 133, 73, 49, 13, 93, 197, 85, 107 },
                             UserId = 1
                         });
                 });
@@ -119,21 +120,23 @@ namespace eximo.data.Migrations
                     b.Property<int>("DataBrokerId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Bio");
+                    b.Property<byte[]>("Bio");
 
-                    b.Property<string>("CaptureCustomerInfo");
+                    b.Property<byte[]>("CaptureCustomerInfo")
+                        .IsRequired();
 
-                    b.Property<int>("CustomerAccountStatus");
+                    b.Property<byte[]>("CustomerAccountStatus")
+                        .IsRequired();
 
-                    b.Property<string>("Name");
+                    b.Property<byte[]>("Name");
 
-                    b.Property<string>("OptOutLink");
+                    b.Property<byte[]>("OptOutLink");
 
                     b.Property<int>("UserId");
 
-                    b.Property<string>("VerificationType");
+                    b.Property<byte[]>("VerificationType");
 
-                    b.Property<string>("Website");
+                    b.Property<byte[]>("Website");
 
                     b.HasKey("DataBrokerId");
 
@@ -145,14 +148,14 @@ namespace eximo.data.Migrations
                         new
                         {
                             DataBrokerId = 1,
-                            Bio = "Some bio information",
-                            CaptureCustomerInfo = "[\"Email\",\"Phone\"]",
-                            CustomerAccountStatus = 0,
-                            Name = "Databroker One",
-                            OptOutLink = "http://optoutlink.com",
+                            Bio = new byte[] { 133, 227, 21, 29, 201, 63, 150, 6, 199, 136, 149, 227, 54, 250, 94, 233, 182, 204, 104, 193, 68, 132, 81, 161, 66, 193, 136, 130, 14, 130, 166, 44 },
+                            CaptureCustomerInfo = new byte[] { 5, 40, 39, 150, 84, 129, 167, 245, 44, 154, 48, 88, 117, 31, 233, 207 },
+                            CustomerAccountStatus = new byte[] { 209, 55, 131, 141, 180, 194, 26, 224, 171, 210, 204, 86, 186, 21, 3, 73 },
+                            Name = new byte[] { 52, 57, 209, 200, 127, 196, 28, 171, 194, 149, 60, 211, 80, 194, 180, 159 },
+                            OptOutLink = new byte[] { 50, 165, 167, 205, 247, 142, 35, 180, 22, 118, 61, 16, 13, 41, 10, 56, 230, 205, 113, 35, 108, 52, 159, 80, 58, 100, 81, 165, 11, 141, 225, 78 },
                             UserId = 1,
-                            VerificationType = "Email",
-                            Website = "http://databrokerone.com"
+                            VerificationType = new byte[] { 95, 144, 101, 100, 53, 172, 236, 109, 199, 65, 233, 75, 254, 27, 60, 120 },
+                            Website = new byte[] { 26, 194, 56, 128, 154, 96, 200, 209, 170, 232, 11, 14, 166, 28, 249, 94, 156, 163, 60, 130, 161, 123, 167, 108, 99, 54, 223, 217, 18, 2, 177, 4 }
                         });
                 });
 
@@ -161,13 +164,14 @@ namespace eximo.data.Migrations
                     b.Property<int>("EmailMarketingId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("EmailMarketingStatus");
+                    b.Property<byte[]>("EmailMarketingStatus")
+                        .IsRequired();
 
-                    b.Property<string>("MarketerName");
+                    b.Property<byte[]>("MarketerName");
 
                     b.Property<int>("UserId");
 
-                    b.Property<string>("Website");
+                    b.Property<byte[]>("Website");
 
                     b.HasKey("EmailMarketingId");
 
@@ -179,10 +183,10 @@ namespace eximo.data.Migrations
                         new
                         {
                             EmailMarketingId = 1,
-                            EmailMarketingStatus = 0,
-                            MarketerName = "Email Marketing Name Example",
+                            EmailMarketingStatus = new byte[] { 209, 55, 131, 141, 180, 194, 26, 224, 171, 210, 204, 86, 186, 21, 3, 73 },
+                            MarketerName = new byte[] { 100, 224, 198, 50, 245, 120, 163, 131, 52, 26, 67, 106, 29, 81, 45, 9, 104, 169, 40, 237, 58, 120, 60, 199, 123, 222, 207, 197, 38, 239, 133, 137 },
                             UserId = 1,
-                            Website = "http://emailmarketersite.com"
+                            Website = new byte[] { 164, 87, 234, 89, 88, 88, 37, 109, 182, 188, 209, 51, 175, 150, 192, 166, 109, 41, 34, 175, 66, 227, 45, 247, 221, 128, 209, 211, 219, 243, 219, 93 }
                         });
                 });
 
@@ -191,13 +195,14 @@ namespace eximo.data.Migrations
                     b.Property<int>("NotificationId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Description");
+                    b.Property<byte[]>("Description");
 
                     b.Property<bool>("NotificationCompleted");
 
-                    b.Property<DateTime>("NotificationDate");
+                    b.Property<byte[]>("NotificationDate")
+                        .IsRequired();
 
-                    b.Property<string>("Title");
+                    b.Property<byte[]>("Title");
 
                     b.Property<int>("UserId");
 
@@ -212,8 +217,8 @@ namespace eximo.data.Migrations
                         {
                             NotificationId = 1,
                             NotificationCompleted = false,
-                            NotificationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Notification Title",
+                            NotificationDate = new byte[] { 241, 119, 30, 242, 95, 22, 79, 48, 59, 139, 212, 77, 96, 255, 57, 14, 130, 212, 26, 43, 229, 204, 192, 155, 126, 103, 126, 43, 182, 105, 191, 21 },
+                            Title = new byte[] { 36, 123, 101, 127, 33, 187, 246, 24, 227, 108, 18, 181, 223, 240, 104, 201, 94, 94, 221, 152, 168, 120, 110, 204, 238, 48, 224, 249, 32, 135, 9, 224 },
                             UserId = 1
                         });
                 });
@@ -223,13 +228,14 @@ namespace eximo.data.Migrations
                     b.Property<int>("PaymentId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("CardName");
+                    b.Property<byte[]>("CardName");
 
-                    b.Property<string>("CardNumber");
+                    b.Property<byte[]>("CardNumber");
 
-                    b.Property<string>("CardType");
+                    b.Property<byte[]>("CardType");
 
-                    b.Property<int>("SecurityNumber");
+                    b.Property<byte[]>("SecurityNumber")
+                        .IsRequired();
 
                     b.Property<int>("UserId");
 
@@ -244,10 +250,10 @@ namespace eximo.data.Migrations
                         new
                         {
                             PaymentId = 1,
-                            CardName = "James Brown",
-                            CardNumber = "123445677890",
-                            CardType = "Visa",
-                            SecurityNumber = 299,
+                            CardName = new byte[] { 188, 187, 254, 6, 109, 38, 171, 130, 167, 129, 198, 130, 254, 155, 16, 234 },
+                            CardNumber = new byte[] { 61, 70, 166, 179, 154, 14, 154, 189, 226, 154, 227, 253, 165, 25, 31, 44 },
+                            CardType = new byte[] { 165, 190, 234, 249, 51, 194, 119, 215, 180, 65, 19, 86, 15, 155, 197, 59 },
+                            SecurityNumber = new byte[] { 202, 74, 83, 37, 89, 251, 13, 88, 125, 14, 86, 76, 207, 249, 1, 147 },
                             UserId = 1
                         });
                 });
@@ -257,9 +263,11 @@ namespace eximo.data.Migrations
                     b.Property<int>("PhoneId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("AreaCode");
+                    b.Property<byte[]>("AreaCode")
+                        .IsRequired();
 
-                    b.Property<int>("PhoneNumber");
+                    b.Property<byte[]>("PhoneNumber")
+                        .IsRequired();
 
                     b.Property<int>("UserId");
 
@@ -273,8 +281,8 @@ namespace eximo.data.Migrations
                         new
                         {
                             PhoneId = 1,
-                            AreaCode = 229,
-                            PhoneNumber = 5555555,
+                            AreaCode = new byte[] { 139, 149, 170, 236, 162, 248, 109, 82, 21, 8, 195, 23, 199, 196, 206, 6 },
+                            PhoneNumber = new byte[] { 126, 240, 70, 9, 37, 53, 146, 198, 65, 10, 106, 240, 60, 134, 235, 91 },
                             UserId = 1
                         });
                 });
@@ -284,7 +292,7 @@ namespace eximo.data.Migrations
                     b.Property<int>("ServicePlanId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ServiceName");
+                    b.Property<byte[]>("ServiceName");
 
                     b.Property<int>("UserId");
 
@@ -299,7 +307,7 @@ namespace eximo.data.Migrations
                         new
                         {
                             ServicePlanId = 1,
-                            ServiceName = "Basic",
+                            ServiceName = new byte[] { 107, 216, 20, 204, 56, 124, 227, 73, 197, 159, 108, 141, 60, 149, 190, 42 },
                             UserId = 1
                         });
                 });
@@ -309,15 +317,15 @@ namespace eximo.data.Migrations
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Email");
+                    b.Property<byte[]>("Email");
 
-                    b.Property<string>("FirstName");
+                    b.Property<byte[]>("FirstName");
 
-                    b.Property<string>("LastName");
+                    b.Property<byte[]>("LastName");
 
-                    b.Property<string>("Password");
+                    b.Property<byte[]>("Password");
 
-                    b.Property<string>("UserName");
+                    b.Property<byte[]>("UserName");
 
                     b.HasKey("UserId");
 
@@ -327,11 +335,11 @@ namespace eximo.data.Migrations
                         new
                         {
                             UserId = 1,
-                            Email = "jbrown@mail.com",
-                            FirstName = "James",
-                            LastName = "Brown",
-                            Password = "abc123",
-                            UserName = "jbrown"
+                            Email = new byte[] { 27, 145, 118, 123, 109, 41, 6, 217, 219, 131, 28, 225, 175, 148, 201, 149 },
+                            FirstName = new byte[] { 68, 230, 21, 168, 187, 38, 115, 149, 80, 183, 110, 184, 252, 235, 49, 26 },
+                            LastName = new byte[] { 251, 89, 219, 235, 84, 174, 143, 6, 183, 94, 105, 2, 82, 29, 27, 219 },
+                            Password = new byte[] { 234, 82, 37, 125, 144, 134, 246, 100, 150, 252, 85, 37, 181, 40, 68, 50 },
+                            UserName = new byte[] { 14, 39, 205, 214, 192, 17, 188, 128, 61, 102, 101, 128, 255, 43, 183, 80 }
                         });
                 });
 

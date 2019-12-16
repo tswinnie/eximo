@@ -86,11 +86,7 @@ namespace eximo.Test
                     Bio = "Some bio information",
                     VerificationType = "Email",
                     OptOutLink = "http://optoutlink.com",
-                    CaptureCustomerInfo = new List<string>()
-                        {
-                            "Email",
-                            "Phone"
-                        },
+                    CaptureCustomerInfo = CapturedCustomerData.Address,
                     UserId = 2,
                 }
             };

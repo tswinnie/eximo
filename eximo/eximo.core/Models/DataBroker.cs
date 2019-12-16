@@ -12,6 +12,14 @@ namespace eximo.core.Models
         Pending
     }
 
+    public enum CapturedCustomerData
+    {
+        Name,
+        Email,
+        Address,
+        Phone
+    }
+
     public class DataBroker
     {
         [Key]
@@ -21,7 +29,7 @@ namespace eximo.core.Models
         public string VerificationType { get; set; }
         public string OptOutLink { get; set; }
         public string Bio { get; set; }
-        public List<string> CaptureCustomerInfo { get; set; }
+        public CapturedCustomerData CaptureCustomerInfo { get; set; }
         public Status CustomerAccountStatus { get; set; }
 
         //foregin key

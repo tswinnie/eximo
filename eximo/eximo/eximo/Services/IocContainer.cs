@@ -29,6 +29,7 @@ namespace eximo.Services
         {
             //register IUserservice for db context
             iocContainer.RegisterType<IUserService, UserService>();
+            iocContainer.RegisterSingleton<IEncryptionService, EncryptionService>();
 
             //set service locator provider       
             ServiceLocator.SetLocatorProvider(() => new UnityServiceLocator(iocContainer));
