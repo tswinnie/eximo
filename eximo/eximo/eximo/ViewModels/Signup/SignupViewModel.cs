@@ -1,4 +1,5 @@
 ﻿using eximo.core.Models;
+using eximo.Views.Login;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,11 +12,19 @@ namespace eximo.ViewModels.Signup
     public class SignupViewModel : BaseViewModel
     {
         public ICommand ValidateUserSignup { get; set; }
+        public ICommand NavigateToLogin { get; set; }
 
         public SignupViewModel()
         {
             ValidateUserSignup = new Command(CheckIfUserDataIsValid);
+            NavigateToLogin = new Command(NavigateToLoginPage);
 
+        }
+
+        private async void NavigateToLoginPage(object obj)
+        {
+            //navigate to login page
+            await Application.Current.MainPage.Navigation.PushAsync(new LoginPage());
         }
 
         private async void CheckIfUserDataIsValid(object signUpPage)
@@ -31,6 +40,7 @@ namespace eximo.ViewModels.Signup
             Label passwordErrorText = (Label)page.Content.FindByName("passwordErrorText");
             Label passwordConfirmErrorText = (Label)page.Content.FindByName("passwordConfirmErrorText");
             Label passwordConfirmNoMatch = (Label)page.Content.FindByName("passwordConfirmNoMatch");
+            Label emailNotValidErrorText = (Label)page.Content.FindByName("emailNotValidErrorText");
 
 
 
@@ -41,9 +51,10 @@ namespace eximo.ViewModels.Signup
                 userNameErrorText.IsVisible = true;
             }
 
-            if (string.IsNullOrEmpty(email.Text) )
+            if (string.IsNullOrEmpty(email.Text) || !IsValidEmail(email.Text) )
             {
                 emailErrorText.IsVisible = true;
+                emailNotValidErrorText.IsVisible = true;
             }
 
             if (string.IsNullOrEmpty(password.Text))
@@ -58,12 +69,13 @@ namespace eximo.ViewModels.Signup
             }
 
             if(!string.IsNullOrEmpty(userName.Text) && !string.IsNullOrEmpty(email.Text) 
-                && !string.IsNullOrEmpty(password.Text) && !string.IsNullOrEmpty(passwordConfirm.Text))
+                && !string.IsNullOrEmpty(password.Text) && !string.IsNullOrEmpty(passwordConfirm.Text) && IsValidEmail(email.Text))
             {
                 userNameErrorText.IsVisible = false;
                 emailErrorText.IsVisible = false;
                 passwordErrorText.IsVisible = false;
                 passwordConfirmErrorText.IsVisible = false;
+                emailNotValidErrorText.IsVisible = false;
 
                 var newUser = new User();
                 try
@@ -75,9 +87,8 @@ namespace eximo.ViewModels.Signup
                    object[] response = await EximoDbContext.AddUserAsync(newUser);
                     if (response[1].Equals(true))
                     {
-                        //user was successfully added
-                        await Application.Current.MainPage.DisplayAlert("User Added", "User was added successfully", "Ok");
                         //navigate to login page
+                        await Application.Current.MainPage.Navigation.PushAsync(new LoginPage());
                     }
                     else
                     {
@@ -103,6 +114,19 @@ namespace eximo.ViewModels.Signup
 
 
 
+        }
+
+        bool IsValidEmail(string email)
+        {
+            try
+            {
+                var mail = new System.Net.Mail.MailAddress(email);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

@@ -15,6 +15,7 @@
                     <Label x:Name="userNameErrorText" Text="The Username field is required." TextColor="Red" IsVisible="False" FontSize="15" LineHeight="0" Padding="0" Margin="0"/>
                     <Entry x:Name="email" Keyboard="Email" Placeholder="Email" FontSize="15" PlaceholderColor="#000000" HeightRequest="{OnPlatform iOS=40, Android=40}" Margin="{OnPlatform iOS=5, Android=5}" TextChanged="email_TextChanged"/>
                     <Label x:Name="emailErrorText" Text="The Email field is required." TextColor="Red" IsVisible="False"/>
+                    <Label x:Name="emailNotValidErrorText" Text="The Email provided is not valid." TextColor="Red" IsVisible="False"/>
                     <Entry x:Name="password" IsPassword="True" Placeholder="Password" FontSize="15" PlaceholderColor="#000000" HeightRequest="{OnPlatform iOS=40, Android=40}" Margin="{OnPlatform iOS=5, Android=5}" TextChanged="password_TextChanged"/>
                     <Label x:Name="passwordErrorText" Text="The Password field is required." TextColor="Red" IsVisible="False"/>
                     <Entry x:Name="passwordConfirm" IsPassword="True" Placeholder="Confirm Password" FontSize="15" PlaceholderColor="#000000" HeightRequest="{OnPlatform iOS=40, Android=40}" Margin="{OnPlatform iOS=5, Android=5}" TextChanged="passwordConfirm_TextChanged"/>
@@ -26,7 +27,7 @@
             <StackLayout Margin="15">
                 <Button x:Name="nextSignUpBtn" Text="NEXT" BackgroundColor="#8759F2" TextColor="#ffffff" FontSize="15" Command="{Binding ValidateUserSignup}" CommandParameter="{x:Reference signUpPage}"/>
                 <Label  Text="Already have an account?" TextColor="#ffffff" HorizontalOptions="Center" Margin="5"/>
-                <Button x:Name="loginButton" Text="Login" BackgroundColor="Transparent"  TextColor="#8759F2" FontSize="13" FontAttributes="Bold"/>
+                <Button x:Name="loginButton" Text="Login" BackgroundColor="Transparent"  TextColor="#8759F2" FontSize="13" FontAttributes="Bold" Command="{Binding NavigateToLogin}"/>
                 <Button x:Name="tryOutButton" Text="Try It Out" BackgroundColor="Transparent"  TextColor="#8759F2" FontSize="13" FontAttributes="Bold"/>
             </StackLayout>
         </StackLayout>
