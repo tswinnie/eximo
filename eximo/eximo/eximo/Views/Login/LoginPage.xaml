@@ -11,6 +11,7 @@
             <Frame x:Name="loginCard" Margin="15" HeightRequest="{OnPlatform Android=200, iOS=200}" CornerRadius="4">
                 <StackLayout x:Name="loginContainer">
                     <Label Text="Login" FontSize="28" FontAttributes="Bold" TextColor="#000000"  Margin="{OnPlatform iOS=10, Android=5}"/>
+                    <Label x:Name="loginFailed" Text="The Username or Password entered was incorrect." TextColor="Red" IsVisible="False"/>
                     <Entry x:Name="userName" Placeholder="Username" FontSize="15" PlaceholderColor="#000000" HeightRequest="{OnPlatform iOS=40, Android=40}" Margin="{OnPlatform iOS=5, Android=5}" TextChanged="userName_TextChanged"/>
                     <Label x:Name="userNameErrorText" Text="The Username field is required." TextColor="Red" IsVisible="False" FontSize="15" LineHeight="0" Padding="0" Margin="0"/>
                     <Entry x:Name="password" IsPassword="True" Placeholder="Password" FontSize="15" PlaceholderColor="#000000" HeightRequest="{OnPlatform iOS=40, Android=40}" Margin="{OnPlatform iOS=5, Android=5}" TextChanged="password_TextChanged"/>
@@ -18,7 +19,7 @@
                 </StackLayout>
             </Frame>
             <StackLayout Margin="15">
-                <Button x:Name="loginButton" Text="SUBMIT" BackgroundColor="#8759F2" TextColor="#ffffff" FontSize="15"/>
+                <Button x:Name="loginButton" Text="SUBMIT" BackgroundColor="#8759F2" TextColor="#ffffff" FontSize="15" Command="{Binding ProcessLogin}" CommandParameter="{x:Reference loginPage}"/>
                 <Label  Text="Don't have an account?" TextColor="#ffffff" HorizontalOptions="Center" Margin="5"/>
                 <Button x:Name="signUp" Text="Sign Up" BackgroundColor="Transparent"  TextColor="#8759F2" FontSize="13" FontAttributes="Bold" Command="{Binding NavigateToSignUp}"/>
             </StackLayout>
