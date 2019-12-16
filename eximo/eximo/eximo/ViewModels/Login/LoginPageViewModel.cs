@@ -32,22 +32,7 @@ namespace eximo.ViewModels.Login
             Label passwordErrorText = (Label)page.Content.FindByName("passwordErrorText");
             Label loginFailedErrotText = (Label)page.Content.FindByName("loginFailed");
 
-
-            //check if user put in valid username
-            //check if fields are valid
-            if (string.IsNullOrEmpty(userName.Text))
-            {
-                userNameErrorText.IsVisible = true;
-            }
-            
-            if (string.IsNullOrEmpty(password.Text))
-            {
-                passwordErrorText.IsVisible = true;
-            }
-            
-            
-            
-            if(!string.IsNullOrEmpty(userName.Text) && !string.IsNullOrEmpty(password.Text))
+            if (!string.IsNullOrEmpty(userName.Text) && !string.IsNullOrEmpty(password.Text))
             {
                 userNameErrorText.IsVisible = false;
                 passwordErrorText.IsVisible = false;
@@ -71,16 +56,16 @@ namespace eximo.ViewModels.Login
                         {
                             //user has not registered continue through to pick a plan
                             await Application.Current.MainPage.Navigation.PushAsync(new SelectPlanPage());
-
                         }
 
                     }
                     else
                     {
-                        //display error msg and reset fields
+                        //display error msg
                         loginFailedErrotText.IsVisible = true;
-                        userName.Text = string.Empty;
-                        password.Text = string.Empty;
+                        userNameErrorText.IsVisible = false;
+                        passwordErrorText.IsVisible = false;   
+                        
                     }
 
                 }
@@ -88,6 +73,7 @@ namespace eximo.ViewModels.Login
                 {
                     Debug.WriteLine(e);
                 }
+
             }
 
         }
