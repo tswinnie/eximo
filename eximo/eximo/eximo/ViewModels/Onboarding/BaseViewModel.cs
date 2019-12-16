@@ -1,4 +1,5 @@
-﻿using System;
+﻿using eximo.data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -12,7 +13,7 @@ namespace eximo.ViewModels.Onboarding
         private int _myCarouselPosition;
 
         public event PropertyChangedEventHandler PropertyChanged;
-
+        public EximoDataContext EximoDbContext => App._eximoDataContext;
 
         public bool IsNextBtnVisible 
         {

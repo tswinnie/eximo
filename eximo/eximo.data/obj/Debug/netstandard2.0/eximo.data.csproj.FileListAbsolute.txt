@@ -1,0 +1,11 @@
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.data\bin\Debug\netstandard2.0\eximo.data.deps.json
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.data\bin\Debug\netstandard2.0\eximo.data.dll
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.data\bin\Debug\netstandard2.0\eximo.data.pdb
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.data\bin\Debug\netstandard2.0\eximo.core.dll
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.data\bin\Debug\netstandard2.0\eximo.core.pdb
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.data\obj\Debug\netstandard2.0\eximo.data.csprojAssemblyReference.cache
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.data\obj\Debug\netstandard2.0\eximo.data.AssemblyInfoInputs.cache
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.data\obj\Debug\netstandard2.0\eximo.data.AssemblyInfo.cs
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.data\obj\Debug\netstandard2.0\eximo.data.csproj.CopyComplete
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.data\obj\Debug\netstandard2.0\eximo.data.dll
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo.data\obj\Debug\netstandard2.0\eximo.data.pdb
