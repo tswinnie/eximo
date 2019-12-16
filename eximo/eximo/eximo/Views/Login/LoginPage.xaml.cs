@@ -23,12 +23,28 @@ namespace eximo.Views.Login
 
         private void userName_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (string.IsNullOrEmpty(userName.Text))
+            {
+                userNameErrorText.IsVisible = true;
+            }
+            else
+            {
+                userNameErrorText.IsVisible = false;
+
+            }
 
         }
 
         private void password_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(password.Text))
+            {
+                passwordErrorText.IsVisible = true;
+            }
+            else
+            {
+                passwordErrorText.IsVisible = false;
+            }
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace eximo.core.Models
@@ -15,6 +16,7 @@ namespace eximo.core.Models
         public string  UserName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public bool IsRegistered { get; set; } = false;
         public Contact ContactInformation { get; set; }
         public PaymentInfo Payment { get; set; }
         public ServicePlan Plan { get; set; }
