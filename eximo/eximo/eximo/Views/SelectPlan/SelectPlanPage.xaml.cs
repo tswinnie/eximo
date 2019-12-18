@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CommonServiceLocator;
+using eximo.ViewModels.Signup;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,7 @@ namespace eximo.Views.SelectPlan
         public SelectPlanPage()
         {
             InitializeComponent();
+            this.BindingContext = ServiceLocator.Current.GetInstance<SignupViewModel>();
         }
     }
 }

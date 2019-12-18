@@ -8,6 +8,7 @@ using FFImageLoading.Svg.Forms;
 using Foundation;
 using UIKit;
 using SQLitePCL;
+using Xamarin.Forms;
 
 namespace eximo.iOS
 {
@@ -27,6 +28,7 @@ namespace eximo.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             Batteries_V2.Init();
+            Forms.SetFlags("CarouselView_Experimental");
 
             global::Xamarin.Forms.Forms.Init();
             CarouselViewRenderer.Init();

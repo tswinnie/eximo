@@ -10,6 +10,7 @@ using CarouselView.FormsPlugin.Android;
 using FFImageLoading.Forms.Platform;
 using FFImageLoading.Svg.Forms;
 using System.IO;
+using Xamarin.Forms;
 
 namespace eximo.Droid
 {
@@ -22,7 +23,7 @@ namespace eximo.Droid
             ToolbarResource = Resource.Layout.Toolbar;
             base.SetTheme(Resource.Style.MainTheme);
             base.OnCreate(savedInstanceState);
-
+            Forms.SetFlags("CarouselView_Experimental");
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);       
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             CarouselViewRenderer.Init();

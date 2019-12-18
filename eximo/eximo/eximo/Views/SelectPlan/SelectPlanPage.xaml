@@ -4,12 +4,42 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="eximo.Views.SelectPlan.SelectPlanPage">
+             x:Class="eximo.Views.SelectPlan.SelectPlanPage"
+             BackgroundColor="#221B43" x:Name="selectPlanPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome Select Plan Page"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <CarouselView ItemsSource="{Binding ServicePlans}" PeekAreaInsets="185">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Frame HasShadow="True"
+                       BorderColor="DarkGray"
+                       CornerRadius="5"
+                       Margin="20"
+                       HeightRequest="500"                             
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand" BackgroundColor="White" WidthRequest="275">
+                            <StackLayout>
+                                <Label Text="{Binding PlanTitle}" HorizontalTextAlignment="Center" FontSize="30" FontAttributes="Bold" TextColor="#FF3E80"/>
+                                <BoxView WidthRequest="1" HeightRequest="1" BackgroundColor="Gray" Opacity="0.2" Margin="10"/>
+                                <Label Text="{Binding PlanPrice}" HorizontalTextAlignment="Center" FontSize="30" FontAttributes="Bold" TextColor="#FF3E80"/>
+                                <BoxView WidthRequest="1" HeightRequest="1" BackgroundColor="Gray" Opacity="0.2" Margin="10"/>
+                                <ListView ItemsSource="{Binding PlanFeatures}"  SelectionMode="None" SeparatorVisibility="None" RowHeight="59">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <StackLayout  Padding="5" Margin="0">
+                                                    <Label Text="{Binding Name}"  TextColor="Black" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="15"/>
+                                                </StackLayout>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
     </ContentPage.Content>
 </ContentPage>
