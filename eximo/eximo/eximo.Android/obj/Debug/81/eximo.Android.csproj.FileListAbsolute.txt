@@ -561,3 +561,4 @@ C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.Andro
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.Android\obj\Debug\81\stamp\_GenerateJavaStubs.stamp
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.Android\obj\Debug\81\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.Android\obj\Debug\81\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\tyron\OneDrive\Desktop\Projects\eximo\eximo-app\eximo\eximo\eximo.Android\obj\Debug\81\stamp\SetupDependenciesForDesigner.stamp

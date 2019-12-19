@@ -7,39 +7,52 @@
              x:Class="eximo.Views.SelectPlan.SelectPlanPage"
              BackgroundColor="#221B43" x:Name="selectPlanPage">
     <ContentPage.Content>
-        <CarouselView ItemsSource="{Binding ServicePlans}" PeekAreaInsets="185">
-            <CarouselView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout>
-                        <Frame HasShadow="True"
-                       BorderColor="DarkGray"
-                       CornerRadius="5"
-                       Margin="20"
-                       HeightRequest="500"                             
-                       HorizontalOptions="Center"
-                       VerticalOptions="CenterAndExpand" BackgroundColor="White" WidthRequest="275">
-                            <StackLayout>
-                                <Label Text="{Binding PlanTitle}" HorizontalTextAlignment="Center" FontSize="30" FontAttributes="Bold" TextColor="#FF3E80"/>
-                                <BoxView WidthRequest="1" HeightRequest="1" BackgroundColor="Gray" Opacity="0.2" Margin="10"/>
-                                <Label Text="{Binding PlanPrice}" HorizontalTextAlignment="Center" FontSize="30" FontAttributes="Bold" TextColor="#FF3E80"/>
-                                <BoxView WidthRequest="1" HeightRequest="1" BackgroundColor="Gray" Opacity="0.2" Margin="10"/>
-                                <ListView ItemsSource="{Binding PlanFeatures}"  SelectionMode="None" SeparatorVisibility="None" RowHeight="59">
-                                    <ListView.ItemTemplate>
-                                        <DataTemplate>
-                                            <ViewCell>
-                                                <StackLayout  Padding="5" Margin="0">
-                                                    <Label Text="{Binding Name}"  TextColor="Black" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="15"/>
-                                                </StackLayout>
-                                            </ViewCell>
-                                        </DataTemplate>
-                                    </ListView.ItemTemplate>
-                                </ListView>
 
-                            </StackLayout>
-                        </Frame>
+        <ScrollView Padding="0" Margin="0">
+            <Grid HorizontalOptions="FillAndExpand">
+                <Grid>
+                    <StackLayout Padding="10" HorizontalOptions="CenterAndExpand">
+                        <Label Text="Lorem dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut ero labore et dolore" TextColor="#ffffff" FontSize="15" HorizontalTextAlignment="Center"/>
                     </StackLayout>
-                </DataTemplate>
-            </CarouselView.ItemTemplate>
-        </CarouselView>
+                </Grid>
+
+                <Grid>
+                    <CarouselView ItemsSource="{Binding ServicePlans}" PeekAreaInsets="120" Position="1">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Frame x:Name="planCard" HasShadow="True"
+                                       BorderColor="DarkGray"
+                                       CornerRadius="5"
+                                       Margin="20,80,20,20"
+                                       HeightRequest="400"                             
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center" BackgroundColor="White" WidthRequest="280">
+                                        <StackLayout>
+                                            <Label Text="{Binding PlanTitle}" HorizontalTextAlignment="Center" FontSize="30" FontAttributes="Bold" TextColor="#FF3E80"/>
+                                            <BoxView WidthRequest="1" HeightRequest="1" BackgroundColor="Gray" Opacity="0.2" Margin="5"/>
+                                            <Label Text="{Binding PlanPrice}" HorizontalTextAlignment="Center" FontSize="30" FontAttributes="Bold" TextColor="#FF3E80"/>
+                                            <BoxView WidthRequest="1" HeightRequest="1" BackgroundColor="Gray" Opacity="0.2" Margin="5"/>
+                                            <ListView ItemsSource="{Binding PlanFeatures}"  SelectionMode="None" SeparatorVisibility="None" RowHeight="50" Margin="0,5,0,0" HasUnevenRows="True" VerticalScrollBarVisibility="Default">
+                                                <ListView.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <ViewCell>
+                                                            <StackLayout  Padding="0,5,0,10" Margin="0">
+                                                                <Label Text="{Binding Name}"  TextColor="Black" HorizontalTextAlignment="Center"  FontSize="15" />
+                                                            </StackLayout>
+                                                        </ViewCell>
+                                                    </DataTemplate>
+                                                </ListView.ItemTemplate>
+                                            </ListView>
+                                            <Button x:Name="planSelectButton" TextColor="#FFFFFF" BackgroundColor="#8759F2" FontSize="15" FontAttributes="Bold" Text="SELECT" Margin="0,10,0,0" Command="{Binding SelectPlanCommand}" CommandParameter="{Binding PlanTitle}" />
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                </Grid>
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

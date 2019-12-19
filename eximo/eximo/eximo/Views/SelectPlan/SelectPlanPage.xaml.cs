@@ -19,5 +19,7 @@ namespace eximo.Views.SelectPlan
             InitializeComponent();
             this.BindingContext = ServiceLocator.Current.GetInstance<SignupViewModel>();
         }
+
+     
     }
 }
