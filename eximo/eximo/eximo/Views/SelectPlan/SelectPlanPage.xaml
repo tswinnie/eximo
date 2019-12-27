@@ -8,51 +8,41 @@
              BackgroundColor="#221B43" x:Name="selectPlanPage">
     <ContentPage.Content>
 
-        <ScrollView Padding="0" Margin="0">
-            <Grid HorizontalOptions="FillAndExpand">
-                <Grid>
-                    <StackLayout Padding="10" HorizontalOptions="CenterAndExpand">
-                        <Label Text="Lorem dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut ero labore et dolore" TextColor="#ffffff" FontSize="15" HorizontalTextAlignment="Center"/>
-                    </StackLayout>
-                </Grid>
+        <Grid HorizontalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
-                <Grid>
-                    <CarouselView ItemsSource="{Binding ServicePlans}" PeekAreaInsets="120" Position="1">
-                        <CarouselView.ItemTemplate>
-                            <DataTemplate>
-                                <StackLayout>
-                                    <Frame x:Name="planCard" HasShadow="True"
-                                       BorderColor="DarkGray"
-                                       CornerRadius="5"
-                                       Margin="20,80,20,20"
-                                       HeightRequest="400"                             
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="Center" BackgroundColor="White" WidthRequest="280">
-                                        <StackLayout>
-                                            <Label Text="{Binding PlanTitle}" HorizontalTextAlignment="Center" FontSize="30" FontAttributes="Bold" TextColor="#FF3E80"/>
-                                            <BoxView WidthRequest="1" HeightRequest="1" BackgroundColor="Gray" Opacity="0.2" Margin="5"/>
-                                            <Label Text="{Binding PlanPrice}" HorizontalTextAlignment="Center" FontSize="30" FontAttributes="Bold" TextColor="#FF3E80"/>
-                                            <BoxView WidthRequest="1" HeightRequest="1" BackgroundColor="Gray" Opacity="0.2" Margin="5"/>
-                                            <ListView ItemsSource="{Binding PlanFeatures}"  SelectionMode="None" SeparatorVisibility="None" RowHeight="50" Margin="0,5,0,0" HasUnevenRows="True" VerticalScrollBarVisibility="Default">
-                                                <ListView.ItemTemplate>
-                                                    <DataTemplate>
-                                                        <ViewCell>
-                                                            <StackLayout  Padding="0,5,0,10" Margin="0">
-                                                                <Label Text="{Binding Name}"  TextColor="Black" HorizontalTextAlignment="Center"  FontSize="15" />
-                                                            </StackLayout>
-                                                        </ViewCell>
-                                                    </DataTemplate>
-                                                </ListView.ItemTemplate>
-                                            </ListView>
-                                            <Button x:Name="planSelectButton" TextColor="#FFFFFF" BackgroundColor="#8759F2" FontSize="15" FontAttributes="Bold" Text="SELECT" Margin="0,10,0,0" Command="{Binding SelectPlanCommand}" CommandParameter="{Binding PlanTitle}" />
-                                        </StackLayout>
-                                    </Frame>
-                                </StackLayout>
-                            </DataTemplate>
-                        </CarouselView.ItemTemplate>
-                    </CarouselView>
-                </Grid>
+            <Grid Grid.Row="0" Grid.Column="0">
+                <StackLayout Padding="10" HorizontalOptions="CenterAndExpand">
+                    <Label Text="Lorem dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut ero labore et dolore" TextColor="#ffffff" FontSize="15" HorizontalTextAlignment="Center"/>
+                </StackLayout>
             </Grid>
-        </ScrollView>
+
+            <Grid Grid.Column="0" Grid.Row="1" HorizontalOptions="CenterAndExpand">
+                <Frame>
+                    <StackLayout>
+                        <Label Text="Test" HorizontalTextAlignment="Center" FontSize="30" FontAttributes="Bold" TextColor="#FF3E80"/>
+                        <BoxView WidthRequest="1" HeightRequest="1" BackgroundColor="Gray" Opacity="0.2" Margin="5"/>
+                        <Label Text="$40" HorizontalTextAlignment="Center" FontSize="30" FontAttributes="Bold" TextColor="#FF3E80"/>
+                        <BoxView WidthRequest="1" HeightRequest="1" BackgroundColor="Gray" Opacity="0.2" Margin="5"/>
+                        <StackLayout  Padding="0,5,0,10" Margin="0">
+                            <Label Text="This is a feature"  TextColor="Black" HorizontalTextAlignment="Center"  FontSize="15" />
+                            <Label Text="This is a feature"  TextColor="Black" HorizontalTextAlignment="Center"  FontSize="15" />
+                            <Label Text="This is a feature"  TextColor="Black" HorizontalTextAlignment="Center"  FontSize="15" />
+                        </StackLayout>
+                        <Button x:Name="planSelectButton" TextColor="#FFFFFF" BackgroundColor="#8759F2" FontSize="15" FontAttributes="Bold" Text="SELECT" Margin="0,10,0,0" Command="{Binding SelectPlan}" />
+                    </StackLayout>
+                </Frame>
+            </Grid>
+            
+        </Grid>
+
+
     </ContentPage.Content>
 </ContentPage>

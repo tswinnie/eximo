@@ -17,7 +17,8 @@ namespace eximo.Views.SelectPlan
         public SelectPlanPage()
         {
             InitializeComponent();
-            this.BindingContext = ServiceLocator.Current.GetInstance<SignupViewModel>();
+           // NavigationPage.SetHasBackButton(this, false);
+            this.BindingContext = ServiceLocator.Current.GetInstance<SelectPlanViewModel>();
         }
 
      

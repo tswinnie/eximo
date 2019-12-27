@@ -12,9 +12,8 @@ namespace eximo.data.Services
     {
         private EximoDataContext _eximoContextRef;
 
-        public UserService(EximoDataContext context)
+        public UserService()
         {
-            _eximoContextRef = context;
         }
 
         public async Task<object[]> AddNewUserAsync(User user)

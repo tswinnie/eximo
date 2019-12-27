@@ -15,13 +15,12 @@ namespace eximo.ViewModels.Signup
     {
         public ICommand ValidateUserSignup { get; set; }
         public ICommand NavigateToLogin { get; set; }
-        public ObservableCollection<Plan> ServicePlans { get => Load(); }
+
 
         public SignupViewModel()
         {
             ValidateUserSignup = new Command(CheckIfUserDataIsValid);
             NavigateToLogin = new Command(NavigateToLoginPage);
-
         }
 
 
@@ -45,9 +44,6 @@ namespace eximo.ViewModels.Signup
             Label passwordConfirmErrorText = (Label)page.Content.FindByName("passwordConfirmErrorText");
             Label passwordConfirmNoMatch = (Label)page.Content.FindByName("passwordConfirmNoMatch");
             Label emailNotValidErrorText = (Label)page.Content.FindByName("emailNotValidErrorText");
-
-
-
 
             //check if fields are valid
             if (string.IsNullOrEmpty(userName.Text))
@@ -114,10 +110,6 @@ namespace eximo.ViewModels.Signup
 
             }
 
-
-
-
-
         }
 
         bool IsValidEmail(string email)
@@ -134,56 +126,7 @@ namespace eximo.ViewModels.Signup
         }
 
 
-        private ObservableCollection<Plan> Load()
-        {
-            return new ObservableCollection<Plan>(new[]
-            {
-                new Plan
-                {
-                    PlanTitle = "Basic",
-                    PlanPrice = "$10",
-                    PlanFeatures = new List<Feature>()
-                    {
-                        new Feature{ Name = "Remove your personal information from 50+ websites" },
-                        new Feature{ Name ="Locate your personal data" },
-                        new Feature{ Name ="Provide detailed reporting of information removed" },
-                    }    
-                },
-                new Plan
-                {
-                    PlanTitle = "Basic Plus",
-                    PlanPrice = "$25",
-                    PlanFeatures = new List<Feature>()
-                    {
-                        new Feature{ Name ="Remove your personal data from email marketers" },
-                        new Feature{ Name ="Provide monthly scans of sites you've been removed from" },
-                        new Feature{ Name ="Provide removal of personal information from 100+ websites for 2 additional user profiles" },
-                        new Feature{ Name ="Manual remove of information from tough sites" },
-                        new Feature{ Name ="Remove your personal information from 100+ websites" },
-                        new Feature{ Name ="Locate your personal data" },
-                        new Feature{ Name ="Provide detailed reporting of information removed" },
-
-                    }
-                },
-                new Plan
-                {
-                    PlanTitle = "Select",
-                    PlanPrice = "$50",
-                    PlanFeatures = new List<Feature>()
-                    {
-                        new Feature{ Name ="Provide monthly privacy reports" },
-                        new Feature{ Name ="Provide removal of personal information from 100+ websites for 4 additional user profiles" },
-                        new Feature{ Name ="Provide removal of personal information from email marketers for 4 additional user profiles" },
-                        new Feature{ Name ="Remove your personal information from 100+ websites" },
-                        new Feature{ Name ="Locate your personal data" },
-                        new Feature{ Name ="Provide detailed reporting of information removed" },
-                        new Feature{ Name ="Remove your personal data from email marketers" },
-                        new Feature{ Name ="Provide monthly scans of sites you've been removed from" },
-                    }
-
-                },
-            });
-        }
+      
 
     }
 }
